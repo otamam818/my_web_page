@@ -1,0 +1,16 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    width: 96%;
+    padding: 1vh 2vw;
+    background-color: brown;
+
+    div {
+        display: flex;
+        flex-grow: 0.4;
+        justify-content: space-between;
+    }
+}
+

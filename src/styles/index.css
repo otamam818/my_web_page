@@ -1,0 +1,25 @@
+* {
+  color: white;
+}
+
+body {
+  background-color: #161616;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  width: 96%;
+  padding: 1vh 2vw;
+  background-color: brown;
+}
+nav div {
+  display: flex;
+  flex-grow: 0.4;
+  justify-content: space-between;
+}
+
+/*# sourceMappingURL=index.css.map */

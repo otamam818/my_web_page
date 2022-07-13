@@ -1,0 +1,23 @@
+@use './components/shadows';
+
+.homepage {
+    height: 87vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.picture-container img {
+    border-radius: 100%;
+
+    /* Adjust the overall size */
+    --size: 60vh;
+    width: var(--size);
+    height: var(--size);
+
+    /* Change the position so that it is down-ish */
+    position: relative;
+    top: 25vh;
+    @include shadows.layered-shadow1();
+}
+
