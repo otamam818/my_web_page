@@ -7,17 +7,24 @@
     justify-content: center;
 }
 
-.picture-container img {
-    border-radius: 100%;
+.picture-container {
+    position: absolute;
+    bottom: 3vh;
 
-    /* Adjust the overall size */
-    --size: 60vh;
-    width: var(--size);
-    height: var(--size);
+    img {
+        border-radius: 100%;
 
-    /* Change the position so that it is down-ish */
-    position: relative;
-    top: 25vh;
-    @include shadows.layered-shadow1();
+        /* Adjust the overall size */
+        --size: 60vh;
+        width: var(--size);
+        height: var(--size);
+
+        /* Change the position so that it is down-ish */
+        @include shadows.layered-shadow1();
+    }
+}
+
+.skill-list img {
+    height: 0.8em;
 }
 

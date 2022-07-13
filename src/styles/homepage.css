@@ -5,6 +5,10 @@
   justify-content: center;
 }
 
+.picture-container {
+  position: absolute;
+  bottom: 3vh;
+}
 .picture-container img {
   border-radius: 100%;
   /* Adjust the overall size */
@@ -12,9 +16,11 @@
   width: var(--size);
   height: var(--size);
   /* Change the position so that it is down-ish */
-  position: relative;
-  top: 25vh;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.2), 0 8px 8px rgba(0, 0, 0, 0.2), 0 16px 16px rgba(0, 0, 0, 0.2);
+}
+
+.skill-list img {
+  height: 0.8em;
 }
 
 /*# sourceMappingURL=homepage.css.map */

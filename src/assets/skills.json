@@ -1,0 +1,18 @@
+{
+    "JavaScript" : {
+        "ImageName": "js.png",
+        "SubSkills": [""]
+    },
+    "Python" : {
+        "ImageName": "python.png",
+        "SubSkills": [""]
+    },
+    "Database" : {
+        "ImageName": "db.png",
+        "SubSkills": [""]
+    },
+    "Java" : {
+        "ImageName": "java.png",
+        "SubSkills": [""]
+    }
+}
