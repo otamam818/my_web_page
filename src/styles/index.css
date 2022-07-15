@@ -5,6 +5,12 @@
 body {
   background-color: #161616;
   margin: 0;
+  padding-top: 5vh;
+}
+
+footer {
+  background-color: brown;
+  height: 5vh;
 }
 
 nav {

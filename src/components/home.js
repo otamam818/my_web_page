@@ -14,8 +14,10 @@ function Home(props) {
 
         return (
             <li key={key}>
-              <img src={myImg} alt="skill"/>
-              <span className="key">{key}</span>
+              <div className="description">
+                <img src={myImg} alt="skill"/>
+                <span className="key">{key}</span>
+              </div>
               <ul>
                 {subSkills}
               </ul>

@@ -7,15 +7,20 @@
     justify-content: center;
 }
 
-.picture-container {
+.picture-container, .skill-list, .skill-list li {
     position: absolute;
-    bottom: 3vh;
+}
 
+.picture-container, .skill-list {
+    top: 30vh;
+}
+
+.picture-container {
     img {
         border-radius: 100%;
 
         /* Adjust the overall size */
-        --size: 60vh;
+        --size: 50vh;
         width: var(--size);
         height: var(--size);
 
@@ -24,7 +29,17 @@
     }
 }
 
-.skill-list img {
-    height: 0.8em;
+.skill-list {
+    padding: 0;
+    img {
+        height: 0.8em;
+    }
+    .description {
+        display: flex;
+        * {
+            padding: 0 0.3vw;
+        }
+    }
 }
+
 

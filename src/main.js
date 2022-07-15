@@ -21,6 +21,7 @@ class Main extends React.Component {
             <>
                 <Navbar name={NAME}/>
                 {elem}
+                <footer></footer>
             </>
         )
     }

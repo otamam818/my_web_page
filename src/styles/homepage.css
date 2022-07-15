@@ -5,22 +5,35 @@
   justify-content: center;
 }
 
-.picture-container {
+.picture-container, .skill-list, .skill-list li {
   position: absolute;
-  bottom: 3vh;
 }
+
+.picture-container, .skill-list {
+  top: 30vh;
+}
+
 .picture-container img {
   border-radius: 100%;
   /* Adjust the overall size */
-  --size: 60vh;
+  --size: 50vh;
   width: var(--size);
   height: var(--size);
   /* Change the position so that it is down-ish */
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.2), 0 8px 8px rgba(0, 0, 0, 0.2), 0 16px 16px rgba(0, 0, 0, 0.2);
 }
 
+.skill-list {
+  padding: 0;
+}
 .skill-list img {
   height: 0.8em;
+}
+.skill-list .description {
+  display: flex;
+}
+.skill-list .description * {
+  padding: 0 0.3vw;
 }
 
 /*# sourceMappingURL=homepage.css.map */
