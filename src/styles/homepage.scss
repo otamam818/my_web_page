@@ -1,5 +1,9 @@
 @use './components/shadows';
 
+:root {
+    --size: 50vh;
+}
+
 .homepage {
     height: 87vh;
     display: flex;
@@ -20,7 +24,6 @@
         border-radius: 100%;
 
         /* Adjust the overall size */
-        --size: 50vh;
         width: var(--size);
         height: var(--size);
 
@@ -31,14 +34,23 @@
 
 .skill-list {
     padding: 0;
+    // To bring it to hte middle
+    $offset: 53vh;
+    top: $offset;
+
     img {
         height: 0.8em;
     }
     .description {
         display: flex;
+        align-items: center;
         * {
             padding: 0 0.3vw;
         }
+    }
+
+    li[class="subSkill"] {
+        position: static;
     }
 }
 
