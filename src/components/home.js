@@ -1,55 +1,123 @@
+/** @fileoverview
+ *  The main component for the homepage
+ */
+
+// Imports
+// ───────────────────────────────────────────────────────────────────────────
 import React from 'react';
-import "../styles/homepage.css";
+import '../styles/homepage.css';
 
+// Global constants
+// ───────────────────────────────────────────────────────────────────────────
 const IMG_HEIGHT = '35vh';
+const SKILLS_FILE = 'skills.json';
 
-function Home(props) {
-    let skills = Object.entries(require('../assets/skills.json'));
-    let each_angle = (2*Math.PI) / skills.length;
-    let skillElement = skills.map((pairs, num_element) => {
-        let key = pairs[0];
-        let metadata = pairs[1];
+// Main Component
+// ───────────────────────────────────────────────────────────────────────────
+export function Home(props) {
+  /** 
+   * @type {string[]}
+   */
+  const skills = Object.entries(require(`../assets/${SKILLS_FILE}`));
 
-        // Place the data inside the component
-        let myImg = require(`../pictures/${metadata.ImageName}`);
-        let subSkills = metadata.SubSkills.map((subSkill, index) => {
-            return <li key={index} className="subSkill">{subSkill}</li>
-        });
+  /** 
+   * @type {number}
+   */
+  const each_angle = (2 * Math.PI) / skills.length;
 
-        // Get the position of the component
-        let offsetX = 5.5;
-        let offsetY = 2.0;
-        let rotated_angle = (each_angle * num_element) - (Math.PI * (3/4))
-        let hyp  = parseFloat(IMG_HEIGHT);
-        let top  = (Math.sin(rotated_angle) * hyp - offsetY).toFixed(1);
-        let left = (Math.cos(rotated_angle) * hyp - offsetX).toFixed(1);
-        let style = {top: `${top}vh`, left: `${left}vh`};
-        console.table({style, hyp, num_element, each_angle, top});
+  /** 
+   * @type {SkillListItem}
+   */
+  const skillElement = skills.map((pair, num_element) => {
+    return <SkillListItem
+      key={num_element}
+      data={pair}
+      each_angle={each_angle}
+      num_element={num_element}
+    />
+  });
 
-        return (
-            <li
-              key={key}
-              style={style}>
-              <div className="description">
-                <img src={myImg} alt="skill"/>
-                <span className="key">{key}</span>
-              </div>
-              <ul>
-                {subSkills}
-              </ul>
-            </li>
-        )
-    });
-
-    return (
-        <div className="homepage">
-            <div className="picture-container">
-                <img src={require("../pictures/mypic.png")} alt="Profile"/>
-            </div>
-            <ol className="skill-list">{skillElement}</ol>
-        </div>
-    )
+  return (
+    <div className="homepage">
+      <div className="picture-container">
+        <img src={require("../pictures/mypic.png")} alt="Profile" />
+      </div>
+      <ol className="skill-list">{skillElement}</ol>
+    </div>
+  )
 }
 
-export default Home;
+/**
+ * List-based items that display skills and subskills, separated in a circular
+ * pattern from a center-point
+ * @extends React.Component
+ */
+class SkillListItem extends React.Component {
+  getStyle(each_angle, num_element) {
+    const offset = {
+      angle: (Math.PI * (3 / 4)),
+      X: 5.5,
+      Y: 7.5
+    }
+    const rotated_angle = (each_angle * num_element) - offset.angle;
+    const hyp = parseFloat(IMG_HEIGHT);
+
+    // Round it up so that no magic numbers are created from
+    // floating-point arithmetic
+    const calculated = {
+        X: (Math.cos(rotated_angle) * hyp - offset.X).toFixed(1),
+        Y: (Math.sin(rotated_angle) * hyp - offset.Y).toFixed(1),
+    }
+    const style = {
+      top: `${calculated.Y}vh`,
+      left: `${calculated.X}vh`
+    };
+    return style;
+  }
+
+  render() {
+    /**
+     * @type {string}
+     */
+    const key = this.props.data[0];
+
+    /**
+     * @type {{ImageName: string, SubSkills: string[]}}
+     */
+    const metadata = this.props.data[1];
+
+    /**
+     * @type HTMLImage
+     */
+    const myImg = require(`../pictures/${metadata.ImageName}`);
+
+    // Place the subskills inside the component
+    /**
+     * @type <li/>
+     */
+    const subSkills = metadata.SubSkills.map((subSkill, index) => {
+      return <li key={index} className="subSkill">{subSkill}</li>
+    });
+
+    // Get the position of the component
+    const style = this.getStyle(
+      this.props.each_angle,
+      this.props.num_element
+    );
+
+    return (
+      <li
+        key={key}
+        style={style}>
+        <button className="description">
+          <img src={myImg} alt="skill" />
+          <span className="key">{key}</span>
+        </button>
+        <ul>
+          {subSkills}
+        </ul>
+      </li>
+    )
+  }
+}
 

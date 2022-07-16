@@ -14,7 +14,7 @@
 }
 
 .picture-container, .skill-list {
-  top: 30vh;
+  top: 25vh;
 }
 
 .picture-container img {
@@ -29,12 +29,15 @@
 .skill-list {
   padding: 0;
   top: 53vh;
+  list-style: none;
 }
 .skill-list img {
   height: 0.8em;
 }
 .skill-list .description {
   display: flex;
+  background-color: transparent;
+  border: 1px solid #333;
   align-items: center;
 }
 .skill-list .description * {

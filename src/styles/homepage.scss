@@ -16,7 +16,7 @@
 }
 
 .picture-container, .skill-list {
-    top: 30vh;
+    top: 25vh;
 }
 
 .picture-container {
@@ -37,12 +37,16 @@
     // To bring it to hte middle
     $offset: 53vh;
     top: $offset;
+    list-style: none;
 
     img {
         height: 0.8em;
     }
+
     .description {
         display: flex;
+        background-color: transparent;
+        border: 1px solid #333;
         align-items: center;
         * {
             padding: 0 0.3vw;
