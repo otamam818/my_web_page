@@ -10,33 +10,52 @@ import '../styles/homepage.css';
 
 // Global constants
 // ───────────────────────────────────────────────────────────────────────────
-const IMG_HEIGHT = '35vh';
+const IMG_HEIGHT = '30vh';
+const offset = {
+  angle: (Math.PI * (3 / 4)),
+  X: 5.0,
+  Y: 8.5
+};
 const SKILLS_FILE = 'skills.json';
 
 // Main Component
 // ───────────────────────────────────────────────────────────────────────────
-export function Home(props) {
-  const /* string[] */ skills =
-        Object.entries(require(`../assets/${SKILLS_FILE}`));
-  const /* number */ each_angle = (2 * Math.PI) / skills.length;
+export class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    const /* string[] */ skills =
+          Object.entries(require(`../assets/${SKILLS_FILE}`));
+    this.state = {
+      skills: skills,
+      visibilities: Array(skills.length).fill(false),
+    };
+  }
 
-  const /* SkillListItem */ skillElement = skills.map((pair, num_element) => {
-    return <SkillListItem
-      key={num_element}
-      data={pair}
-      each_angle={each_angle}
-      num_element={num_element}
-    />
-  });
+  getVisibleItem(index) {
+  }
 
-  return (
-    <div className="homepage">
-      <div className="picture-container">
-        <img src={require("../pictures/mypic.png")} alt="Profile" />
+  render() {
+    const skills = this.state.skills;
+    const /* number */ each_angle = (2 * Math.PI) / skills.length;
+
+    const /* SkillListItem */ skillElement = skills.map((pair, num_element) => {
+      return <SkillListItem
+        key={num_element}
+        data={pair}
+        each_angle={each_angle}
+        num_element={num_element}
+      />
+    });
+
+    return (
+      <div className="homepage">
+        <div className="picture-container">
+          <img src={require("../pictures/mypic.png")} alt="Profile" />
+        </div>
+        <ol className="skill-list">{skillElement}</ol>
       </div>
-      <ol className="skill-list">{skillElement}</ol>
-    </div>
-  )
+    )
+  }
 }
 
 /**
@@ -53,11 +72,7 @@ class SkillListItem extends React.Component {
    * @return {{top: string, left: string}}
    */
   getStyle(each_angle, num_element) {
-    const offset = {
-      angle: (Math.PI * (3 / 4)),
-      X: 5.5,
-      Y: 7.5
-    }
+    
 
     const /* number */ rotated_angle =
           (each_angle * num_element) - offset.angle;
