@@ -10,11 +10,9 @@ import '../styles/homepage.css';
 
 // Global constants
 // ───────────────────────────────────────────────────────────────────────────
-const IMG_HEIGHT = '30vh';
+const IMG_HEIGHT = '25vh';
 const offset = {
   angle: (Math.PI * (3 / 4)),
-  X: 5.0,
-  Y: 8.5
 };
 const SKILLS_FILE = 'skills.json';
 
@@ -77,17 +75,19 @@ class SkillListItem extends React.Component {
     // Round it up so that no magic numbers are created from
     // floating-point arithmetic
     const calculated = {
-        X: (Math.cos(rotated_angle) * hyp - offset.X).toFixed(1),
-        Y: (Math.sin(rotated_angle) * hyp - offset.Y).toFixed(1),
+        X: (Math.cos(rotated_angle) * hyp).toFixed(1),
+        Y: (Math.sin(rotated_angle) * hyp).toFixed(1),
     }
-
     /**
      * @type {{top: string, left: string}}
      */
-    const style = {
-      top: `${calculated.Y}vh`,
-      left: `${calculated.X}vh`
-    };
+    const style = {};
+    (calculated.X > 0) ?
+        style['left'] = Math.abs(calculated.X) + 'vh':
+        style['right'] = Math.abs(calculated.X) + 'vh';
+    (calculated.Y > 0) ?
+        style['top'] = Math.abs(calculated.X) + 'vh':
+        style['bottom'] = Math.abs(calculated.X) + 'vh';
 
     return style;
   }

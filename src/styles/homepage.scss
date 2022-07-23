@@ -35,7 +35,7 @@
 .skill-list {
     padding: 0;
     // To bring it to hte middle
-    $offset: 53vh;
+    $offset: 48vh;
     top: $offset;
     list-style: none;
     @include shadows.layered-shadow1();
@@ -77,6 +77,7 @@
     }
 
     ul {
+        position: absolute;
         opacity: 0;
     }
 }
