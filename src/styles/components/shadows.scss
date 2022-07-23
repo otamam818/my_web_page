@@ -8,8 +8,18 @@
 }
 
 @mixin layered-shadow2() {
-  box-shadow: 0 1px 1px rgba(0,0,0,0.08), 
-                0 2px 2px rgba(0,0,0,0.12), 
-                0 4px 4px rgba(0,0,0,0.16);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+                0 2px 2px rgba(0,0,0,0.16), 
+                0 4px 4px rgba(0,0,0,0.20);
 }
+
+@mixin layers-lighter() {
+  $alpha: 0.20;
+  box-shadow: 0 1px 1px rgba(30,30,30,$alpha), 
+              0 2px 2px rgba(30,30,30,$alpha), 
+              0 4px 4px rgba(30,30,30,$alpha), 
+              0 8px 8px rgba(30,30,30,$alpha),
+              0 16px 16px rgba(30,30,30,$alpha);
+}
+
 

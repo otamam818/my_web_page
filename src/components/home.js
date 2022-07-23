@@ -23,7 +23,7 @@ const SKILLS_FILE = 'skills.json';
 export class Home extends React.Component {
   constructor(props) {
     super(props);
-    const /* string[] */ skills =
+    const /* string[][] */ skills =
           Object.entries(require(`../assets/${SKILLS_FILE}`));
     this.state = {
       skills: skills,
@@ -31,11 +31,8 @@ export class Home extends React.Component {
     };
   }
 
-  getVisibleItem(index) {
-  }
-
   render() {
-    const skills = this.state.skills;
+    const /* string[][] */ skills = this.state.skills;
     const /* number */ each_angle = (2 * Math.PI) / skills.length;
 
     const /* SkillListItem */ skillElement = skills.map((pair, num_element) => {
@@ -65,15 +62,13 @@ export class Home extends React.Component {
  */
 class SkillListItem extends React.Component {
   /**
-   * @param {each_angle}  the angular distance among each neighboring
-   *                      SkillListItem 
-   * @param {num_element} the number indicating the ordered position of the
-   *                      current item
-   * @return {{top: string, left: string}}
-   */
+  * @param {each_angle}  the angular distance among each neighboring
+  *                      SkillListItem 
+  * @param {num_element} the number indicating the ordered position of the
+  *                      current item
+  * @return {{top: string, left: string}}
+  */
   getStyle(each_angle, num_element) {
-    
-
     const /* number */ rotated_angle =
           (each_angle * num_element) - offset.angle;
 
@@ -107,6 +102,12 @@ class SkillListItem extends React.Component {
 
     const /* HTMLImage */ myImg = require(`../pictures/${metadata.ImageName}`);
 
+    // Get the position of the component
+    const style = this.getStyle(
+      this.props.each_angle,
+      this.props.num_element
+    );
+
     // Place the subskills inside the component
     /**
      * @type <li/>
@@ -115,19 +116,16 @@ class SkillListItem extends React.Component {
       return <li key={index} className="subSkill">{subSkill}</li>
     });
 
-    // Get the position of the component
-    const style = this.getStyle(
-      this.props.each_angle,
-      this.props.num_element
-    );
+    const button = parseFloat(style.left) > 0 ?
+          [<img src={myImg} alt="skill" />, <span className="key">{key}</span>]:
+          [<span className="key">{key}</span>, <img src={myImg} alt="skill" />];
 
     return (
       <li
         key={key}
         style={style}>
         <button className="description">
-          <img src={myImg} alt="skill" />
-          <span className="key">{key}</span>
+            {button}
         </button>
         <ul>
           {subSkills}
