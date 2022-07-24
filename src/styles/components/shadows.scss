@@ -1,17 +1,44 @@
-@mixin layered-shadow1() {
+/* Contents
+-- GA -> growing alpha
+-- FA -> growing alpha
+*/
+@function shadow-5l-FA($red, $green, $blue) {
   $alpha: 0.20;
-  box-shadow: 0 1px 1px rgba(0,0,0,$alpha), 
-              0 2px 2px rgba(0,0,0,$alpha), 
-              0 4px 4px rgba(0,0,0,$alpha), 
-              0 8px 8px rgba(0,0,0,$alpha),
-              0 16px 16px rgba(0,0,0,$alpha);
+  @return 0 1px 1px rgba(0,0,0,$alpha), 
+          0 2px 2px rgba(0,0,0,$alpha), 
+          0 4px 4px rgba(0,0,0,$alpha), 
+          0 8px 8px rgba(0,0,0,$alpha),
+          0 16px 16px rgba(0,0,0,$alpha);
 }
 
-@mixin layered-shadow2() {
-  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
-                0 2px 2px rgba(0,0,0,0.16), 
-                0 4px 4px rgba(0,0,0,0.20);
+@function shadow-5l ($red, $green, $blue, $alpha) {
+    $x: 0 1px 1px   rgba($red,$green,$blue, $alpha), 
+    0 2px 2px   rgba($red,$green,$blue, $alpha), 
+    0 4px 4px   rgba($red,$green,$blue, $alpha), 
+    0 8px 8px   rgba($red,$green,$blue, $alpha),
+    0 16px 16px rgba($red,$green,$blue, $alpha);
+    @return $x;
 }
+
+@function shadow-5l-I ($red, $green, $blue, $alpha) {
+    $x: inset 0 1px 1px   rgba($red,$green,$blue, $alpha), 
+    inset  0 2px 2px   rgba($red,$green,$blue, $alpha), 
+    inset  0 4px 4px   rgba($red,$green,$blue, $alpha), 
+    inset  0 8px 8px   rgba($red,$green,$blue, $alpha),
+    inset  0 16px 16px rgba($red,$green,$blue, $alpha);
+    @return $x;
+}
+
+$black-shadow-5l: shadow-5l-FA(0, 0, 0);
+
+@function shadow-3l-GA($red, $green, $blue) {
+  @return 0 1px 1px rgba(0,0,0,0.12), 
+          0 2px 2px rgba(0,0,0,0.16), 
+          0 4px 4px rgba(0,0,0,0.20);
+}
+
+$black-shadow-3l: shadow-3l-GA(0, 0, 0);
+$white-shadow-3l: shadow-3l-GA(255, 255, 255);
 
 @mixin layers-lighter() {
   $alpha: 0.20;
@@ -22,4 +49,7 @@
               0 16px 16px rgba(30,30,30,$alpha);
 }
 
+$glow: shadow-5l(255, 255, 255, 0.2);
+$glow-blue: shadow-5l(129, 212, 250, 0.5);
+$glow-green: shadow-5l(128, 203, 0, 0.5);
 

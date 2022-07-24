@@ -1,8 +1,9 @@
 import React from 'react';
 import Navbar from './components/navbar.js';
 import { Home as HomePage } from './components/home.js';
+import {Footer} from './components/footer.js';
 
-let NAME = "Tahmin Ahmed";
+const NAME = "Tahmin Ahmed";
 
 export class Main extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ export class Main extends React.Component {
       <>
         <Navbar name={NAME} />
         {elem}
-        <footer></footer>
+        <Footer/>
       </>
     )
   }

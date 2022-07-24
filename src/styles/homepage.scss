@@ -1,11 +1,17 @@
 @use './components/shadows';
+@use './components/animations';
 
 :root {
     --size: 50vh;
 }
 
-.homepage {
-    height: 87vh;
+.welcome-message {
+    margin: 2vw;
+    animation: fade-slide-left 2s;
+}
+
+.skill-circle {
+    height: 63vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,17 +34,20 @@
         height: var(--size);
 
         /* Add shadows */
-        @include shadows.layered-shadow1();
+        box-shadow: shadows.$black-shadow-5l;
     }
 }
 
 .skill-list {
     padding: 0;
-    // To bring it to hte middle
+    // To bring it to the middle
     $offset: 48vh;
     top: $offset;
     list-style: none;
-    @include shadows.layered-shadow1();
+    opacity: 0;
+    box-shadow: shadows.$black-shadow-5l;
+    animation: squash-left 1s linear 1s;
+    animation-fill-mode: forwards;
 
     img {
         height: 2.8em;
@@ -50,20 +59,21 @@
         
     }
 
-
     .description {
         display: flex;
         align-items: center;
         background-color: transparent;
+        padding: 1vh 1vh;
+        border-radius: 5px;
         border: transparent;
         * {
             padding: 0 0.3vw;
-            border-radius: 100%;
+            border-radius: 5px;
             transition: 300ms;
-            @include shadows.layered-shadow2();
+            box-shadow: shadows.$black-shadow-3l;
 
             &:hover {
-                @include shadows.layered-shadow1();
+                box-shadow: shadows.$black-shadow-5l;
             }
 
             &:active {

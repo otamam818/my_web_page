@@ -1,16 +1,39 @@
+@use './shadows';
+
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: absolute;
     top: 0;
     width: 96%;
-    padding: 1vh 2vw;
-    background-color: brown;
+    padding: 0.5vh 2vw;
+
+    .title {
+        font-size: x-large;
+        font-weight: 900;
+        text-decoration: none;
+        text-shadow: shadows.shadow-5l(0, 0, 0, 0.2);
+        
+        &:hover {
+            text-shadow: shadows.shadow-5l(50, 50, 50, 0.2);
+        }
+    }
 
     div {
         display: flex;
         flex-grow: 0.4;
         justify-content: space-between;
+        * {
+            color: #ccc;
+            text-shadow: shadows.shadow-5l(0, 0, 0, 0.2);
+            transition: 400ms;
+            &:hover {
+                color: white;
+                font-weight: bold;
+                text-shadow: shadows.shadow-5l(20, 20, 20, 0.2);
+            }
+        }
     }
 }
 

@@ -3,21 +3,23 @@
  *  homepage
  */
 
-// Imports
-// ───────────────────────────────────────────────────────────────────────────
+/* Imports */
+/* ─────────────────────────────────────────────────────────────────────── */
 import React from 'react';
 import '../styles/homepage.css';
 
-// Global constants
-// ───────────────────────────────────────────────────────────────────────────
-const IMG_HEIGHT = '25vh';
+/* Global constants and declarations*/
+/* ─────────────────────────────────────────────────────────────────────── */
+const IMG_HEIGHT = '50vh';
 const offset = {
   angle: (Math.PI * (3 / 4)),
+  rad_spacing: 2
 };
 const SKILLS_FILE = 'skills.json';
+const FULL_CIRCLE = (2 * Math.PI)
 
-// Main Component
-// ───────────────────────────────────────────────────────────────────────────
+/* Main Component */
+/* ─────────────────────────────────────────────────────────────────────── */
 export class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -31,9 +33,12 @@ export class Home extends React.Component {
 
   render() {
     const /* string[][] */ skills = this.state.skills;
-    const /* number */ each_angle = (2 * Math.PI) / skills.length;
 
-    const /* SkillListItem */ skillElement = skills.map((pair, num_element) => {
+    /* Separate each angle evenly */
+    const /* number */ each_angle = FULL_CIRCLE / skills.length;
+
+    const /* SkillListItem */ skillElements =
+        skills.map((pair, num_element) => {
       return <SkillListItem
         key={num_element}
         data={pair}
@@ -43,12 +48,18 @@ export class Home extends React.Component {
     });
 
     return (
-      <div className="homepage">
-        <div className="picture-container">
-          <img src={require("../pictures/mypic.png")} alt="Profile" />
-        </div>
-        <ol className="skill-list">{skillElement}</ol>
+    <div className="homepage">
+      <div className="welcome-message">
+        <h1>Welcome to my homepage</h1>
+        <p>Click any icon around the circle to know more</p>
       </div>
+        <div className="skill-circle">
+          <div className="picture-container">
+            <img src={require("../pictures/mypic.png")} alt="Profile" />
+          </div>
+          <ol className="skill-list">{skillElements}</ol>
+        </div>
+    </div>
     )
   }
 }
@@ -70,16 +81,17 @@ class SkillListItem extends React.Component {
     const /* number */ rotated_angle =
           (each_angle * num_element) - offset.angle;
 
-    const /* number */ hyp = parseFloat(IMG_HEIGHT);
+    const /* number */ hyp =
+        (parseFloat(IMG_HEIGHT) / 2) + offset.rad_spacing;
 
-    // Round it up so that no magic numbers are created from
-    // floating-point arithmetic
+    /* Round it up so that no magic numbers are created from
+       floating-point arithmetic */
     const calculated = {
         X: (Math.cos(rotated_angle) * hyp).toFixed(1),
         Y: (Math.sin(rotated_angle) * hyp).toFixed(1),
     }
     /**
-     * @type {{top: string, left: string}}
+     * @type {{top: string, left: string, bottom: string, right: string}}
      */
     const style = {};
     (calculated.X > 0) ?
@@ -102,34 +114,37 @@ class SkillListItem extends React.Component {
 
     const /* HTMLImage */ myImg = require(`../pictures/${metadata.ImageName}`);
 
-    // Get the position of the component
+    /* Get the position of the component */
     const style = this.getStyle(
       this.props.each_angle,
       this.props.num_element
     );
 
-    // Place the subskills inside the component
-    /**
-     * @type <li/>
-     */
+    /* Place the subskills inside the component */
     const subSkills = metadata.SubSkills.map((subSkill, index) => {
       return <li key={index} className="subSkill">{subSkill}</li>
     });
 
-    const button = parseFloat(style.left) > 0 ?
-          [<img src={myImg} alt="skill" />, <span className="key">{key}</span>]:
-          [<span className="key">{key}</span>, <img src={myImg} alt="skill" />];
+    /* Swaps based on the previously calculated angles */
+    const buttonContents = parseFloat(style.left) > 0 ?
+          [<img key={key + 'img'} src={myImg} alt="skill" />,
+           <span key={key + 'name'} className="key">{key}</span>]:
+          [<span key={key + 'name'} className="key">{key}</span>,
+           <img key={key + 'img'} src={myImg} alt="skill" />];
 
     return (
       <li
         key={key}
         style={style}>
+
         <button className="description">
-            {button}
+            {buttonContents}
         </button>
+
         <ul>
           {subSkills}
         </ul>
+
       </li>
     )
   }
