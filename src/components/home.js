@@ -55,7 +55,7 @@ export class Home extends React.Component {
       </div>
         <div className="skill-circle">
           <div className="picture-container">
-            <img src={require("../pictures/mypic.png")} alt="Profile" />
+            <img src={require("../pictures/mypic.jpg")} alt="Profile" />
           </div>
           <ol className="skill-list">{skillElements}</ol>
         </div>
@@ -96,7 +96,7 @@ class SkillListItem extends React.Component {
     const style = {};
     (calculated.X > 0) ?
         style['left'] = Math.abs(calculated.X) + 'vh':
-        style['right'] = Math.abs(calculated.X) + 'vh';
+        style['right'] = Math.abs(calculated.X) + 1.6 + 'vh';
     (calculated.Y > 0) ?
         style['top'] = Math.abs(calculated.X) + 'vh':
         style['bottom'] = Math.abs(calculated.X) + 'vh';

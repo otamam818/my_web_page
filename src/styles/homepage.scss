@@ -6,12 +6,26 @@
 }
 
 .welcome-message {
-    margin: 2vw;
+    margin: 2vh;
+    margin-top: 4vh;
+    background-color: #131313bd;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 2vh 2vh;
+    padding-top: 1vh;
+    width: 47vw;
     animation: fade-slide-left 2s;
+    text-shadow: shadows.$black-shadow-3l;
+    box-shadow: shadows.$black-shadow-5l;
+
+    h1 {
+        color: #80cbc4;
+        text-shadow: shadows.$black-shadow-5l;
+    }
 }
 
 .skill-circle {
-    height: 63vh;
+    height: 58vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,7 +36,7 @@
 }
 
 .picture-container, .skill-list {
-    top: 25vh;
+    top: 35vh;
 }
 
 .picture-container {
@@ -41,7 +55,7 @@
 .skill-list {
     padding: 0;
     // To bring it to the middle
-    $offset: 48vh;
+    $offset: 58vh;
     top: $offset;
     list-style: none;
     opacity: 0;
@@ -61,6 +75,8 @@
 
     .description {
         display: flex;
+        justify-content: space-between;
+        width: 105%;
         align-items: center;
         background-color: transparent;
         padding: 1vh 1vh;
@@ -79,6 +95,11 @@
             &:active {
                 @include shadows.layers-lighter();
             }
+        }
+
+        .key {
+            padding: 0.8em 0.5em;
+            background-color: rgba(0, 0, 0, 0.31);
         }
     }
 

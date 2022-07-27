@@ -11,11 +11,14 @@
   }
 }
 @keyframes photo-blur {
-  0%, 75%, 100% {
-    -webkit-filter: blur(20px) brightness(150%);
+  0% {
+    -webkit-filter: blur(5px) brightness(80%);
   }
-  50%, 90% {
-    -webkit-filter: blur(5px) brightness(100%);
+  50% {
+    -webkit-filter: blur(20px) brightness(100%);
+  }
+  100% {
+    -webkit-filter: blur(5px) brightness(80%);
   }
 }
 @keyframes squash-left {
@@ -39,12 +42,25 @@
 }
 
 .welcome-message {
-  margin: 2vw;
+  margin: 2vh;
+  margin-top: 4vh;
+  background-color: rgba(19, 19, 19, 0.7411764706);
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 2vh 2vh;
+  padding-top: 1vh;
+  width: 47vw;
   animation: fade-slide-left 2s;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.16), 0 4px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.2), 0 8px 8px rgba(0, 0, 0, 0.2), 0 16px 16px rgba(0, 0, 0, 0.2);
+}
+.welcome-message h1 {
+  color: #80cbc4;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.2), 0 8px 8px rgba(0, 0, 0, 0.2), 0 16px 16px rgba(0, 0, 0, 0.2);
 }
 
 .skill-circle {
-  height: 63vh;
+  height: 58vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,7 +71,7 @@
 }
 
 .picture-container, .skill-list {
-  top: 25vh;
+  top: 35vh;
 }
 
 .picture-container img {
@@ -69,7 +85,7 @@
 
 .skill-list {
   padding: 0;
-  top: 48vh;
+  top: 58vh;
   list-style: none;
   opacity: 0;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.2), 0 8px 8px rgba(0, 0, 0, 0.2), 0 16px 16px rgba(0, 0, 0, 0.2);
@@ -85,6 +101,8 @@
 }
 .skill-list .description {
   display: flex;
+  justify-content: space-between;
+  width: 105%;
   align-items: center;
   background-color: transparent;
   padding: 1vh 1vh;
@@ -102,6 +120,10 @@
 }
 .skill-list .description *:active {
   box-shadow: 0 1px 1px rgba(30, 30, 30, 0.2), 0 2px 2px rgba(30, 30, 30, 0.2), 0 4px 4px rgba(30, 30, 30, 0.2), 0 8px 8px rgba(30, 30, 30, 0.2), 0 16px 16px rgba(30, 30, 30, 0.2);
+}
+.skill-list .description .key {
+  padding: 0.8em 0.5em;
+  background-color: rgba(0, 0, 0, 0.31);
 }
 .skill-list li[class=subSkill] {
   position: static;
