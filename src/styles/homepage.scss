@@ -1,3 +1,8 @@
+/* ------------------------------------------------------------------------ */
+/*                        # Contents # | # Shortcut #                       */
+/*                        -  Generic   | - GNR                              */
+/*                        -  Timeline  | - TLN                              */
+/* ------------------------------------------------------------------------ */
 @use './components/shadows';
 @use './components/animations';
 
@@ -5,6 +10,8 @@
     --size: 50vh;
 }
 
+/* Generic (GNR) */
+/* ------------------------------------------------------------------------ */
 .welcome-message {
     margin: 2vh;
     margin-top: 4vh;
@@ -14,7 +21,6 @@
     padding: 2vh 2vh;
     padding-top: 1vh;
     width: 47vw;
-    animation: fade-slide-left 2s;
     text-shadow: shadows.$black-shadow-3l;
     box-shadow: shadows.$black-shadow-5l;
 
@@ -65,8 +71,6 @@
     list-style: none;
     opacity: 0;
     box-shadow: shadows.$black-shadow-5l;
-    animation: squash-left 1s linear 1s;
-    animation-fill-mode: forwards;
 
     img {
         height: 2.8em;
@@ -118,4 +122,14 @@
     }
 }
 
+/* Timeline (TLN) */
+/* ------------------------------------------------------------------------ */
+.welcome-message {
+    animation: fade-slide-left 2s;
+}
+
+.skill-list {
+    animation: squash-left 1s linear 1s;
+    animation-fill-mode: forwards;
+}
 
