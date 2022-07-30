@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Contents
 -- GA -> growing alpha
 -- FA -> growing alpha
@@ -37,6 +38,14 @@
     margin-left: 0;
   }
 }
+@keyframes wave {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(45deg);
+  }
+}
 :root {
   --size: 50vh;
 }
@@ -57,6 +66,11 @@
 .welcome-message h1 {
   color: #80cbc4;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.2), 0 8px 8px rgba(0, 0, 0, 0.2), 0 16px 16px rgba(0, 0, 0, 0.2);
+}
+.welcome-message h1::after {
+  content: "👋";
+  display: inline-block;
+  animation: wave 3s infinite;
 }
 
 .skill-circle {

@@ -21,6 +21,11 @@
     h1 {
         color: #80cbc4;
         text-shadow: shadows.$black-shadow-5l;
+        &::after {
+            content: "👋";
+            display: inline-block;
+            animation: wave 3s infinite;
+        }
     }
 }
 
