@@ -50,7 +50,7 @@ export class Home extends React.Component {
     return (
     <div className="homepage">
       <div className="welcome-message">
-        <h1>Welcome to my homepage</h1>
+        <h1>Welcome to my homepage </h1>
         <p>Click any icon around the circle to know more</p>
       </div>
         <div className="skill-circle">
