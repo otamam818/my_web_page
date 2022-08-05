@@ -1,5 +1,6 @@
 import React from 'react';
 
+// TODO: Implement style guide
 export class Footer extends React.Component {
   render() {
     const contactData = Object.entries(require('../assets/contact.json'));
