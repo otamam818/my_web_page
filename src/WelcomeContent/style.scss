@@ -1,0 +1,66 @@
+
+.welcome-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  h2 {
+    color: #CDCDCB;
+  }
+
+}
+
+@media (orientation: landscape) {
+  .welcome-content {
+    .welcome-message {
+      width: 30vw;
+
+      h1 {
+        font-size: 4vw;
+      }
+
+      h2 {
+        font-size: 2.4vw;
+      }
+    }
+
+    img {
+      width: 20vw;
+      border-radius: 100%;
+    }
+
+    .welcome-content-splash {
+      position: absolute;
+      height: 35%;
+      width: 100%;
+      z-index: -1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .row {
+        display: flex;
+        justify-content: space-around;
+        font-size: 8px;
+
+        .dot {
+          animation: funfade 4s infinite;
+          animation-delay: var(--delay);
+        }
+      }
+    }
+  }
+}
+
+@keyframes funfade {
+  0%, 80% {
+    filter: blur(0);
+  }
+
+  50% {
+    filter: blur(10px);
+  }
+}
+

@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  height: 60px;
+  background-color: green;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1F1F1E;
+    color: white;
+  }
+}
+
