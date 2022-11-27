@@ -27,13 +27,13 @@
     }
 
     img {
-      width: 20vw;
+      height: calc(55% + 5vw);
       border-radius: 100%;
     }
 
     .welcome-content-splash {
       position: absolute;
-      height: 35%;
+      height: inherit;
       width: 100%;
       z-index: -1;
       display: flex;
