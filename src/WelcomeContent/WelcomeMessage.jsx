@@ -2,8 +2,8 @@
 function WelcomeMessage () {
   return (
     <div className="welcome-message">
-      <h1> Welcome </h1>
-      <h2> I am Tahmin Ahmed, and this page tells you about me </h2>
+      <h1> Tahmin Ahmed </h1>
+      <h2> Software Engineer | Problem Solver </h2>
     </div>
   )
 }
