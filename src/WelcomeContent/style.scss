@@ -13,44 +13,53 @@
 
 }
 
-@media (orientation: landscape) {
-  .welcome-content {
-    .welcome-message {
-      width: max-content;
+.welcome-content {
+  .welcome-message {
+    width: max-content;
 
-      h1 {
-        font-size: 42px;
-      }
-
-      h2 {
-        font-size: 22px;
-      }
+    h1 {
+      font-size: 42px;
     }
 
-    img {
-      height: 225px;
-      border-radius: 100%;
+    h2 {
+      font-size: 22px;
     }
+  }
 
-    .welcome-content-splash {
-      position: absolute;
-      height: inherit;
-      width: 100%;
-      z-index: -1;
+  img {
+    height: 225px;
+    border-radius: 100%;
+  }
+
+  .welcome-content-splash {
+    position: absolute;
+    height: inherit;
+    width: 100%;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .row {
       display: flex;
-      flex-direction: column;
       justify-content: space-around;
+      font-size: 8px;
 
-      .row {
-        display: flex;
-        justify-content: space-around;
-        font-size: 8px;
-
-        .dot {
-          animation: funfade 4s infinite;
-          animation-delay: var(--delay);
-        }
+      .dot {
+        animation: funfade 4s infinite;
+        animation-delay: var(--delay);
       }
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  .welcome-content {
+    flex-direction: column;
+    gap: 25px;
+
+    .welcome-message {
+      text-align: center;
     }
   }
 }
