@@ -1,17 +1,80 @@
 {
-  "JavaScript" : {
+  "JavaScript / TypeScript" : {
     "ReactJS" : {
       "skills" : [
         "Designing, deploying and managing high-quality user interfaces with modular and reusable components",
         "Implementing responsive and scalable user interfaces",
         "Integrating back-end APIs seamlessly to the user interface using modern ideologies",
-        "Ensuring every component follows established processes and works as intended"
+        "Ensuring every component follows established processes and works as intended",
+        "Ability to develop in server-rendered React frameworks like NextJS"
       ],
       "projects" : [
         {
           "name": "Personal Finance Tracker",
           "link": "https://github.com/otamam818/PersonalFinanceTracker",
-          "description": "An app that allows users to track their personal finances without selling their data to the internet"
+          "description": "An app that allows users to track their personal finances without selling their data to the internet",
+          "otherFrameworks": [
+            {"name" : "ReduxJS", "link" : "" },
+            {"name" : "Tauri", "link" : "" },
+            {"name" : "Serde", "link" : "" }
+          ]
+        },
+        {
+          "name": "BUIT-ChobiGhor",
+          "link": "https://github.com/IshmamDC217/BUIT-ChobiGhor",
+          "description": "A customized gallery made in recollection of all the beautiful memories my brother and I had with our family",
+          "otherFrameworks": [
+            {"name" : "NextJS", "link" : "" },
+            {"name" : "Tailwind", "link" : "" },
+            {"name" : "TypeScript", "link" : "" }
+          ]
+        },
+        {
+          "name": "Sterling Family Artefacts",
+          "link": "https://github.com/leonsterling/ITProject-FiveFingers",
+          "description": "A CRUD application for a client, used to store and search his family's artefacts",
+          "otherFrameworks": [
+            {"name" : "MongoDB", "link" : "" },
+            {"name" : "Sass", "link" : "" },
+            {"name" : "Confluence", "link" : "" },
+            {"name" : "Trello", "link" : "" }
+          ]
+        }
+      ]
+    }
+  },
+  "General Programming" : {
+    "Test-Driven Development" : {
+      "skills" : [
+        "Ability to write tests for software systems decided through clear requirements",
+        "Clear communication skills, allowing teammates to leverage their full potential",
+        "Ability to write unit-tests and integration tests with agility",
+        "Can choose appropriate edge cases for various parts of software",
+        "Implementation of fault-tolerant back-end API to handle different requirements",
+        "Ability to refactor and implement reusable code for extending projects"
+      ],
+      "projects" : [
+        {
+          "name": "Infexion Move-Chooser",
+          "link": "",
+          "description": "(University) A simple AI that decides the best game moves to make to reach a destination in the game",
+          "otherFrameworks": []
+        }
+      ]
+    },
+    "Object-Oriented Development" : {
+      "skills" : [
+        "Develop coherent objects that work efficiently",
+        "Implement patterns that decouple code and allow extensibility",
+        "Explain the benefits of certain architectural decisions for growing the software",
+        "Debug erroneous code and explain the source of the error and follow-up procedures"
+      ],
+      "projects" : [
+        {
+          "name": "SWEN30006_Proj2_TorusVerse",
+          "link": "https://github.com/otamam818/SWEN30006_Proj2_TorusVerse",
+          "description": "(University) A pre-made game which was massively refactored implement extended features",
+          "otherFrameworks": []
         }
       ]
     }
