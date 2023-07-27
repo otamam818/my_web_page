@@ -1,5 +1,6 @@
 {
-  "JavaScript / TypeScript" : {
+  "JavaScript" : {
+    "--color" : "#ffff8a",
     "ReactJS" : {
       "skills" : [
         "Designing, deploying and managing high-quality user interfaces with modular and reusable components",
@@ -17,7 +18,8 @@
             {"name" : "ReduxJS", "link" : "" },
             {"name" : "Tauri", "link" : "" },
             {"name" : "Serde", "link" : "" }
-          ]
+          ],
+          "color" : "lightblue"
         },
         {
           "name": "BUIT-ChobiGhor",
@@ -27,7 +29,8 @@
             {"name" : "NextJS", "link" : "" },
             {"name" : "Tailwind", "link" : "" },
             {"name" : "TypeScript", "link" : "" }
-          ]
+          ],
+          "color" : "lightblue"
         },
         {
           "name": "Sterling Family Artefacts",
@@ -38,7 +41,8 @@
             {"name" : "Sass", "link" : "" },
             {"name" : "Confluence", "link" : "" },
             {"name" : "Trello", "link" : "" }
-          ]
+          ],
+          "color" : "lightblue"
         }
       ]
     }
@@ -58,7 +62,8 @@
           "name": "Infexion Move-Chooser",
           "link": "",
           "description": "(University) A simple AI that decides the best game moves to make to reach a destination in the game",
-          "otherFrameworks": []
+          "otherFrameworks": [],
+          "color" : "lightblue"
         }
       ]
     },
@@ -74,7 +79,8 @@
           "name": "SWEN30006_Proj2_TorusVerse",
           "link": "https://github.com/otamam818/SWEN30006_Proj2_TorusVerse",
           "description": "(University) A pre-made game which was massively refactored implement extended features",
-          "otherFrameworks": []
+          "otherFrameworks": [],
+          "color" : "lightblue"
         }
       ]
     }

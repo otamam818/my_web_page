@@ -1,10 +1,26 @@
 import "./style.scss";
+import data from "./data.json";
+import ShowcaseCard from "./ShowcaseCard";
 
 function Skills() {
+  const showcase = Object.entries(data).map((entry_val, index) => {
+    if (entry_val[0].startsWith("--")) {
+      return null;
+    }
+
+    return (
+      <ShowcaseCard key={index} entry_val={entry_val} />
+    );
+  });
   return (
     <div className="my-skills">
-      <h1> Skills </h1>
-      
+      <div className="navigator">
+        <h1> Skills </h1>
+        {/*TODO: Add a sorter here*/}
+      </div>
+      <div className="data-showcase">
+        {showcase}
+      </div>
     </div>
   )
 }
