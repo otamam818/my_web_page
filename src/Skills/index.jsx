@@ -18,7 +18,7 @@ function Skills() {
         <h1> Skills </h1>
         {/*TODO: Add a sorter here*/}
       </div>
-      <div className="data-showcase">
+      <div className="data-showcase spread">
         {showcase}
       </div>
     </div>

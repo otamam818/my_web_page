@@ -2,6 +2,7 @@
   "JavaScript" : {
     "--color" : "#ffff8a",
     "ReactJS" : {
+      "imageFile" : "react.png",
       "skills" : [
         "Designing, deploying and managing high-quality user interfaces with modular and reusable components",
         "Implementing responsive and scalable user interfaces",

@@ -12,26 +12,31 @@ function ShowcaseCard({ entry_val }) {
   const [key, val] = entry_val;
   const [currState, setCurrState] = useState(cardState.closed);
 
+  const isClosed = currState === cardState.closed;
+
   const toggleState = () => { return (e) => {
     e.preventDefault();
-    setCurrState(currState === cardState.closed
+    setCurrState(isClosed
       ? cardState.opened
       : cardState.closed);
   }};
 
-  const spacerWidth = currState === cardState.closed
+  const spacerWidth = isClosed
     ? '0'
     : '100%';
 
+  const cardClass = `showcase-card${isClosed ? '' : ' expanded'}  card`;
   return (
     <>
-    <div onClick={toggleState()} className="showcase-card">
+    <div className="spacer" style={{width: spacerWidth}}></div>
+
+    <div onClick={toggleState()} className={cardClass}>
       {key}
     </div>
 
+    <div className="spacer" style={{width: spacerWidth}}></div>
     <div style={{width: spacerWidth}} className="showcase-card--expand">
-      <div className="spacer" style={{width: spacerWidth}}></div>
-      <Content data={val} />
+      <Content data={val} isClosed={isClosed} />
     </div>
     </>
   );

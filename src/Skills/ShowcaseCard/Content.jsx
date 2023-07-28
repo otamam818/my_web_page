@@ -1,25 +1,30 @@
 import {useState} from "react";
+import Card from "../../Common/Card";
 
-function Content ( { data } ) {
+function Content ( { data, isClosed } ) {
   // Used to store CSS variables for any data that has a customized preference
   const [styleVars, setStyleVars] = useState({});
+  const contentClass = `content ${isClosed ? 'hidden' : 'shown'}`
 
   const skillEntries = [];
   Object.entries(data).forEach((entry, index) => {
-    if (entry[0].startsWith('--') ) {
+    const [key, value] = entry;
+    if (key.startsWith('--') ) {
       // A deep copy is not required as it just represents string-based data
-      if (styleVars[entry[0]] === undefined) {
+      if (styleVars[key] === undefined) {
         const styleVarsClone = { ...styleVars };
-        styleVarsClone[entry[0]] = entry[1];
+        styleVarsClone[key] = value;
         setStyleVars(styleVarsClone);
       }
       return;
     }
 
-    const [name, {skills /*, projects */}] = entry;
+    const [name, {skills, imageFile /*, projects */}] = entry;
     const subSkills = skills.map((value, index) => {
-      return <InfoCard key={index} value={value} />
+      return <Card key={index} innerText={value} />
     });
+
+    const imageBinary = imageFile ? require(`../Images/${imageFile}`) : null;
     /* TODO: Make a separate component for this
     const relatedProjects = projects.map((value, index) => {
       return <InfoCard key={index} value={value} />
@@ -30,23 +35,24 @@ function Content ( { data } ) {
 
     skillEntries.push(
       <div key={index} className="skill-entries">
-        <h1> {name} </h1>
-        <h2> Skills </h2>
-        {subSkills}
+        <div className="heading-section spread">
+          <img src={imageBinary} alt={`Logo of ${name}`} />
+          <h1> {name} </h1>
+        </div>
+        <div className="skill-section">
+          <h2> Sub-skills </h2>
+          <div className="spread">
+            {subSkills}
+          </div>
+        </div>
       </div>
     )
   });
-  // console.log(skillEntries);
   return (
-    <div className="content">
+    <div className={contentClass}>
       {skillEntries}
     </div>
   )
 }
-
-function InfoCard( { value } ) {
-  return <div className="showcase-card"> { value } </div>;
-}
-
 
 export default Content;
