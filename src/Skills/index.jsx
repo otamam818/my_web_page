@@ -9,7 +9,7 @@ function Skills() {
     }
 
     return (
-      <ShowcaseCard key={index} entry_val={entry_val} />
+      <ShowcaseCard key={index} entry_val={entry_val} define={true} />
     );
   });
   return (

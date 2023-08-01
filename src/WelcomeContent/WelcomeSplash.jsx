@@ -13,14 +13,14 @@ function WelcomeSplash () {
       let innerList = [];
       for (let j = 0; j < NUM_COLUMNS; j++) {
         let delay = Math.ceil(Math.random() * DELAY_SCALER);
-        innerList.push(<div className='dot' style={
+        innerList.push(<div key={`dot-${j}`} className='dot' style={
           {"--delay" : `${delay}s`}
         }>
           •</div>);
       }
 
       finlist.push(
-        <div className='row'>
+        <div key={`dot-${i}`} className='row'>
           {innerList}
         </div>
       )

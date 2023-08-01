@@ -7,7 +7,6 @@ function WelcomeContent () {
   let ref = useRef(null);
   let [currHeight, setCurrHeight] = useState(null);
   useEffect(() => {
-    console.log(ref);
     setCurrHeight(((Math.ceil(ref.current.offsetHeight / 100) + 2) * 100) - 50);
   }, [])
   return (
