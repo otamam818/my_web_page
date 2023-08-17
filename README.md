@@ -4,6 +4,12 @@ Where I let the world know about myself!
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Roadmap
+
+- [ ] Move the project to TypeScript
+- [ ] Add a sorting section to the skillset
+- [ ] Fix the shadow of the skill cards
+
 ## Available Scripts
 
 In the project directory, you can run:
