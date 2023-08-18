@@ -1,0 +1,183 @@
+{
+  "General Programming" : {
+    "--color" : "#d8d8f0",
+    "--color-grad": "#9e9ed2",
+    "--color-hover" : "#f9c3a2",
+    "Test-Driven Development" : {
+      "imageFile" : "tdd.png",
+      "skills" : [
+        "Ability to write tests for software systems decided through clear requirements",
+        "Clear communication skills, allowing teammates to leverage their full potential",
+        "Ability to write unit-tests and integration tests with agility",
+        "Can choose appropriate edge cases for various parts of software",
+        "Implementation of fault-tolerant back-end API to handle different requirements",
+        "Ability to refactor and implement reusable code for extending projects"
+      ],
+      "projects" : [
+        {
+          "name": "Infexion Move-Chooser",
+          "link": "https://github.com/otamam818/AI-Infexion-Project2",
+          "description": "(University) A simple AI that decides the best game moves to make to reach a destination in the game",
+          "otherFrameworks": [
+            {"name" : "NumPy", "link" : "https://numpy.org/" }
+          ]
+        }
+      ]
+    },
+    "Object-Oriented Development" : {
+      "imageFile" : "oop.webp",
+      "skills" : [
+        "Develop coherent objects that work efficiently",
+        "Implement patterns that decouple code and allow extensibility",
+        "Explain the benefits of certain architectural decisions for growing the software",
+        "Debug erroneous code and explain the source of the error and follow-up procedures"
+      ],
+      "projects" : [
+        {
+          "name": "SWEN30006 Project-2 TorusVerse",
+          "link": "https://github.com/otamam818/SWEN30006_Proj2_TorusVerse",
+          "description": "(University) A pre-made game which was massively refactored implement extended features",
+          "otherFrameworks": [
+            {"name" : "Maven", "link" : "https://maven.apache.org/" },
+            {"name" : "JGameGrid", "link" : "https://aplu.ch/home/apluhomex.jsp?site=45" }
+          ],
+          "color" : "lightblue"
+        }
+      ]
+    }
+  },
+  "JavaScript and TypeScript" : {
+    "--color" : "#ffff8a",
+    "ReactJS" : {
+      "imageFile" : "react.png",
+      "skills" : [
+        "Designing, deploying and managing high-quality user interfaces with modular and reusable components",
+        "Implementing responsive and scalable user interfaces",
+        "Integrating back-end APIs seamlessly to the user interface using modern ideologies",
+        "Ensuring every component follows established processes and works as intended",
+        "Ability to develop in server-rendered React frameworks like NextJS"
+      ],
+      "projects" : [
+        {
+          "name": "BUIT-ChobiGhor",
+          "link": "https://github.com/IshmamDC217/BUIT-ChobiGhor",
+          "description": "A customized gallery made in recollection of all the beautiful memories my brother and I had with our family",
+          "otherFrameworks": [
+            {"name" : "NextJS", "link" : "https://nextjs.org/" },
+            {"name" : "Tailwind", "link" : "https://tailwindcss.com/" },
+            {"name" : "TypeScript", "link" : "https://www.typescriptlang.org/" }
+          ]
+        },
+        {
+          "name": "Sterling Family Artefacts",
+          "link": "https://github.com/leonsterling/ITProject-FiveFingers",
+          "description": "A CRUD application for a client, used to store and search his family's artefacts",
+          "otherFrameworks": [
+            {"name" : "MongoDB", "link" : "https://www.mongodb.com/" },
+            {"name" : "Sass", "link" : "https://sass-lang.com/" },
+            {"name" : "Confluence", "link" : "https://www.atlassian.com/software/confluence" },
+            {"name" : "Trello", "link" : "https://trello.com/" }
+          ]
+        }
+      ]
+    }
+  },
+  "Python" : {
+    "--color" : "#70cc89",
+    "--color-grad": "#5db374",
+    "--color-hover" : "#f9c3a2",
+    "Graphical User Interface Development" : {
+      "imageFile" : "pyqt.png",
+      "skills" : [
+        "Integration of user interfaces with various technologies and business solutions",
+        "Clear communication skills, allowing teammates to leverage their full potential",
+        "Ensuring the technical feasibility of the interfaces made",
+        "Ability to refactor and implement reusable code for extending projects"
+      ],
+      "projects" : [
+        {
+          "name": "NoteMaker",
+          "link": "",
+          "description": "A note-taking app used to spped up taking notes using shortcuts",
+          "otherFrameworks": [
+            {"name" : "PyQt5", "link" : "https://pypi.org/project/PyQt5/" }
+          ]
+        }
+      ]
+    },
+    "Text-based User Interface" : {
+      "imageFile" : "ratatui.png",
+      "skills" : [
+        "Developing quick-to-use tools",
+        "Programming developer oriented tools",
+        "Building productivity-oriented tools"
+      ],
+      "projects" : [
+        {
+          "name": "COVID Pearson Correlation",
+          "link": "https://github.com/otamam818/COVIDPearsonCorrelation",
+          "description": "A script that checks the pearson correlation between any two countries during a certain time in COVID",
+          "otherFrameworks": [
+            {"name" : "Pandas", "link" : "https://pandas.pydata.org/" }
+          ]
+        },
+        {
+          "name": "WordDataScraper",
+          "link": "https://github.com/otamam818/WordDataScraper",
+          "description": "An app that does lemmatized natural language analysis for inputted articles",
+          "otherFrameworks": [
+            {"name" : "PyperClip", "link" : "https://pypi.org/project/pyperclip/" },
+            {"name" : "PyQt6", "link" : "https://doc.qt.io/qtforpython-6/index.html" }
+          ]
+        }
+      ]
+    }
+  },
+  "Rust" : {
+    "--color" : "#f2ac82",
+    "--color-grad": "#f09761",
+    "--color-hover" : "#f9c3a2",
+    "Cross-platform development" : {
+      "imageFile" : "crossplatform.png",
+      "skills" : [
+        "Ability to resolve compiler errors and produce fault-tolerant code",
+        "Knowledge of writing clear and easy-to-understand documentation, comments, and docstrings",
+        "Developing serverside frameworks with safely-handled states",
+        "Ability to write modularized code for extending projects"
+      ],
+      "projects" : [
+        {
+          "name": "Personal Finance Tracker",
+          "link": "https://github.com/otamam818/PersonalFinanceTracker",
+          "description": "An app that allows users to track their personal finances without selling their data to the internet",
+          "otherFrameworks": [
+            {"name" : "ReduxJS", "link" : "https://redux.js.org/" },
+            {"name" : "Tauri", "link" : "https://tauri.app/" },
+            {"name" : "Serde", "link" : "https://serde.rs/" }
+          ]
+        }
+      ]
+    },
+    "Server-side Development" : {
+      "imageFile" : "server.png",
+      "skills" : [
+        "Ability to resolve compiler errors and produce fault-tolerant code",
+        "Knowledge of writing clear and easy-to-understand documentation, comments, and docstrings",
+        "Developing serverside frameworks with safely-handled states",
+        "Ability to write modularized code for extending projects"
+      ],
+      "projects" : [
+        {
+          "name": "My Family Website (initial version)",
+          "link": "https://github.com/otamam818/family",
+          "description": "A website made in preparation to host on a Raspberry Pi for storing shared family data",
+          "otherFrameworks": [
+            {"name" : "Svelte", "link" : "https://svelte.dev/" },
+            {"name" : "Axum", "link" : "https://github.com/tokio-rs/axum" },
+            {"name" : "Serde", "link" : "https://serde.rs/" }
+          ]
+        }
+      ]
+    }
+  }
+}
