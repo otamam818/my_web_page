@@ -1,8 +1,14 @@
-import {useState, useEffect} from 'react';
 import "./style.scss";
+import { Section } from './Section';
+
+export interface FooterData {
+  direction: string,
+  title: string,
+  dataPath: string,
+}
 
 function Footer() {
-  const data = [
+  const data: FooterData[] = [
     {
       direction: 'left',
       title: 'Contact Me:',
@@ -24,47 +30,6 @@ function Footer() {
       {information}
     </footer>
   )
-}
-
-function Section( { direction, title, dataPath } ) {
-  const [currData, setCurrdata] = useState(null)
-  // const data = require(`${dataPath}`);
-  useEffect(() => {
-    import( /* @vite-ignore */ dataPath)
-      .then((value) => setCurrdata(value.default));
-  })
-
-  if (currData === null) {
-    return null;
-  }
-
-  const bulletComponents = Object.entries(currData).map((value, index) => {
-    const [imagePath, {title, link}] = value;
-    return <ImageBullet key={index} imagePath={imagePath} title={title} link={link} />;
-  });
-
-  return (
-    <div className={`${direction}-section`}>
-      <h3> {title} </h3>
-      { bulletComponents }
-    </div>
-  )
-}
-
-function ImageBullet ( { imagePath, title, link } ) {
-  const imageSource = `Footer/${imagePath}`;
-  return link 
-    ? (
-      <a href={link} className="image-bullet spread" >
-        <img src={imageSource} alt="logo" />
-        <span>{title}</span>
-      </a>
-  ) : (
-      <div className="image-bullet spread">
-        <img src={imageSource} alt="logo" />
-        <span>{title}</span>
-      </div>
-  );
 }
 
 export default Footer;

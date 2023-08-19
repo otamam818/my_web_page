@@ -6,5 +6,9 @@
   "sass.png" : {
     "title" : "Sass",
     "link" : "https://sass-lang.com/"
+  },
+  "vite.svg" : {
+    "title" : "Vite",
+    "link" : "https://react.dev/"
   }
 }
