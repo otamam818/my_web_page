@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Roadmap
 
-- [ ] Move the project to TypeScript
+- [X] Move the project to TypeScript
 - [ ] Add a sorting section to the skillset
 - [ ] Fix the shadow of the skill cards
 

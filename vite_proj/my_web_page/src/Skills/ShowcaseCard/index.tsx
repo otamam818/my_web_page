@@ -1,5 +1,7 @@
 import {useState} from "react";
 import Content from "./Content";
+import { MainSkills } from "../ISkills";
+import { Dictionary } from "../../Common/CommonTypes";
 
 import "./styles.scss";
 
@@ -8,7 +10,12 @@ export const cardState = {
   closed: 2
 }
 
-function ShowcaseCard({ entry_val }) {
+type DataMap = [string, MainSkills];
+interface ShowcaseCardProps {
+  entry_val: DataMap,
+  define?: boolean
+}
+function ShowcaseCard({ entry_val }: ShowcaseCardProps) {
   const [key, val] = entry_val;
   const [currState, setCurrState] = useState(cardState.closed);
   const [styleVars, setStyleVars] = useState(getStyleVars(entry_val));
@@ -19,8 +26,7 @@ function ShowcaseCard({ entry_val }) {
     const [innerKey, innerVal] = value; 
     const parsedStylesClone = { ...parsedStyles };
     if (innerKey.startsWith('--') ) {
-      // A deep copy is not required as it just represents string-based data
-      if (parsedStyles[innerKey] === undefined) {
+      if (!(innerKey in parsedStyles)) {
         parsedStylesClone[innerKey] = innerVal;
       }
       parsedStylesClone.hasBeenParsed = true;
@@ -35,7 +41,7 @@ function ShowcaseCard({ entry_val }) {
     setStyleVars(parsedStyles);
   }
 
-  const toggleState = () => { return (e) => {
+  const toggleState = () => { return (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     setCurrState(isClosed ? cardState.opened : cardState.closed);
   }};
@@ -69,7 +75,7 @@ function ShowcaseCard({ entry_val }) {
   );
 }
 
-function getStyleVars(entry_val) {
+function getStyleVars(entry_val: DataMap): Dictionary {
   // Get the maximum width for fitting all words in the card appropriately
   let width = Math
     .max(...entry_val[0]

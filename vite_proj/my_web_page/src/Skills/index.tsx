@@ -1,9 +1,15 @@
 import "./style.scss";
 import data from "./data.json";
 import ShowcaseCard from "./ShowcaseCard";
+import Sorter from "./Sorter";
+import { SorterContext, SortModes } from "./Sorter/SorterContext";
+import { makeState, ClassLike } from "../Common/Hooks";
+import { MainSkills } from "./ISkills";
 
 function Skills() {
-  const showcase = Object.entries(data).map((entry_val, index) => {
+  const sortMode = makeState(SortModes.Default);
+
+  const showcase = Object.entries(data).map((entry_val: [string, MainSkills], index) => {
     if (entry_val[0].startsWith("--")) {
       return null;
     }
@@ -13,17 +19,18 @@ function Skills() {
     );
   });
   return (
+    <SorterContext.Provider value={sortMode as ClassLike<SortModes>} >
     <div className="my-skills">
-      <div className="navigator">
+      <div className="spread navigator">
         <h1> Skills </h1>
-        {/*TODO: Add a sorter here*/}
+        <Sorter />
       </div>
       <div className="data-showcase spread">
         {showcase}
       </div>
     </div>
+    </SorterContext.Provider>
   )
 }
 
 export default Skills;
-

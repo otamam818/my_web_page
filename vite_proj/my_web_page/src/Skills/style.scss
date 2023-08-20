@@ -53,6 +53,15 @@
       }
     }
   }
+
+  .navigator {
+    justify-content: space-between;
+    align-items: center;
+  
+    .sorter {
+      align-items: center;
+    }
+  }
 }
 
 @media (max-width: 786px) {

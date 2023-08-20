@@ -62,16 +62,3 @@ body {
   }
 }
 
-.pill {
-  --color: #cadce2;
-  background-color: var(--color);
-  padding: 10px 20px;
-  border-radius: 50px;
-  color: #0b1d33;
-  transition: 200ms;
-
-  &:hover {
-    scale: 1.1;
-  }
-}
-

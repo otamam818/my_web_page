@@ -1,6 +1,14 @@
 import {useEffect, useRef, useState} from "react";
+import "./Pill.scss";
 
-function Pill( { innerText, addedClass, clickResponse, styleVars } ) {
+interface PillProps {
+  innerText?: string,
+  addedClass?: string,
+  clickResponse?: CallableFunction,
+  styleVars?: Object
+}
+
+function Pill( { innerText, addedClass, clickResponse, styleVars }: PillProps ) {
   const chosenClass = `pill ${addedClass ? addedClass : ''}`;
   const [styleIsSet, setStyleIsSet] = useState(false);
   if (!clickResponse) {
