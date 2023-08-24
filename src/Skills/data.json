@@ -1,6 +1,7 @@
 {
   "General Programming" : {
     "--color" : "#d8d8f0",
+    "proficiency" : 100,
     "--color-grad": "#9e9ed2",
     "--color-hover" : "#f9c3a2",
     "Test-Driven Development" : {
@@ -48,6 +49,7 @@
   },
   "JavaScript and TypeScript" : {
     "--color" : "#ffff8a",
+    "proficiency" : 9,
     "ReactJS" : {
       "imageFile" : "react.png",
       "skills" : [
@@ -84,6 +86,7 @@
   },
   "Python" : {
     "--color" : "#70cc89",
+    "proficiency": 10,
     "--color-grad": "#5db374",
     "--color-hover" : "#f9c3a2",
     "Graphical User Interface Development" : {
@@ -135,6 +138,7 @@
   },
   "Rust" : {
     "--color" : "#f2ac82",
+    "proficiency": 8,
     "--color-grad": "#f09761",
     "--color-hover" : "#f9c3a2",
     "Cross-platform development" : {

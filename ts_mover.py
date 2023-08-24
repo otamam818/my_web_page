@@ -14,7 +14,6 @@ BINARY_FILE_EXTENSIONS: Final[list[str]] = [
 ]
 
 def main():
-    src_items = os.listdir(SOURCE_ROOT)
     fix_dirs(SOURCE_ROOT)
 
 def fix_dirs(parent_path: str):

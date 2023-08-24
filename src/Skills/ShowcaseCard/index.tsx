@@ -54,7 +54,7 @@ function ShowcaseCard({ entry_val }: ShowcaseCardProps) {
     ? {width: `0`, display: 'none'}
     : {width: '100%', display: 'inline'};
 
-  const cardClass = `showcase-card${isClosed ? '' : ' expanded'}  card`;
+  const cardClass = `showcase-card${isClosed ? '' : ' expanded'} card`;
   return (
     <>
     <div className="spacer" style={spacerStyle}></div>

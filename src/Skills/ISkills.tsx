@@ -17,6 +17,7 @@ export interface ISubSkills {
 }
 
 export interface MainSkills {
+    proficiency: Number,
     [key: string]: ISubSkills | any;
 }
 

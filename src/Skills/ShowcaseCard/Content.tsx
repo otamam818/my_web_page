@@ -1,29 +1,45 @@
 import {useState} from "react";
 import Card from "../../Common/Card";
 import Pill from "../../Common/Pill";
+import { MainSkills } from "../ISkills";
+import { ReactElement } from "react";
+import { Dictionary } from "../../Common/CommonTypes";
 
-function Content ( { data, isClosed } ) {
+const unparsableData = new Set([
+  "proficiency"
+])
+
+interface ContentProps {
+  data: MainSkills,
+  isClosed?: boolean
+}
+function Content ( { data, isClosed }: ContentProps ) {
   // Used to store CSS variables for any data that has a customized preference
   // TODO: Make the cards work like a carousel for mobile devices
+  console.log({ data });
   const [styleVars, setStyleVars] = useState({});
   const contentClass = `content ${isClosed ? 'hidden' : 'shown'}`
 
-  const skillEntries = [];
+  const skillEntries: Array<ReactElement> = [];
   Object.entries(data).forEach((entry, index) => {
     const [key, value] = entry;
     if (key.startsWith('--') ) {
       // A deep copy is not required as it just represents string-based data
-      if (styleVars[key] === undefined) {
-        const styleVarsClone = { ...styleVars };
+      if (!(key in styleVars)) {
+        const styleVarsClone: Dictionary = { ...styleVars };
         styleVarsClone[key] = value;
         setStyleVars(styleVarsClone);
       }
       return;
     }
 
+    if (unparsableData.has(key)) {
+      return;
+    }
+
     const [name, {skills, imageFile, projects }] = entry;
     const subSkills = skills.map((value, index) => {
-      return <Card key={index} innerText={value} />
+      return <Card key={index} innerText={value} define={true} />
     });
 
     const imageBinary = imageFile ? `/Skills/${imageFile}` : undefined;

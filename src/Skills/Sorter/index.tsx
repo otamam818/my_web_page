@@ -1,18 +1,18 @@
 import { useContext } from 'react'
-import { SorterContext, SortModes } from './SorterContext';
+import { SorterContext, SortKeys, SortKeysList } from './SorterContext';
 import Pill from '../../Common/Pill';
 
 function Sorter () {
   const chosenMode = useContext(SorterContext);
 
-  function handleClick(value: SortModes) {
+  function handleClick(value: SortKeys) {
     return () => {
       chosenMode?.set(value);
     }
   }
 
   const sorterChoices
-  = (Object.keys(SortModes) as Array<SortModes>)
+  = (SortKeysList)
   .map((key) => {
     if (key === chosenMode?.get()) {
       return (
