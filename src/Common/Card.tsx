@@ -5,8 +5,8 @@ import {useEffect, useRef, useState, ReactNode} from "react";
 interface CardProps {
  innerText?: ReactNode,
  addedClass?: string,
- clickResponse: CallableFunction,
- define: boolean
+ clickResponse?: CallableFunction,
+ define?: boolean
 }
 function Card( { innerText, addedClass, clickResponse, define }: CardProps ) {
   const chosenClass = `card ${addedClass ? addedClass : ''}`;

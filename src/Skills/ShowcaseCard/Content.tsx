@@ -1,7 +1,7 @@
-import {useState} from "react";
+import {Key, ReactNode, useState} from "react";
 import Card from "../../Common/Card";
 import Pill from "../../Common/Pill";
-import { MainSkills } from "../ISkills";
+import { IProjects, MainSkills } from "../ISkills";
 import { ReactElement } from "react";
 import { Dictionary } from "../../Common/CommonTypes";
 
@@ -38,12 +38,12 @@ function Content ( { data, isClosed }: ContentProps ) {
     }
 
     const [name, {skills, imageFile, projects }] = entry;
-    const subSkills = skills.map((value, index) => {
+    const subSkills = skills.map((value: ReactNode, index: Key) => {
       return <Card key={index} innerText={value} define={true} />
     });
 
     const imageBinary = imageFile ? `/Skills/${imageFile}` : undefined;
-    const relatedProjects = projects.map((value, index) => {
+    const relatedProjects = projects.map((value: IProjects, index: Key) => {
       return <ProjectContent key={index} data={value} />
     });
 
@@ -74,7 +74,8 @@ function Content ( { data, isClosed }: ContentProps ) {
   )
 }
 
-function ProjectContent({ data }) {
+interface ProjectContentProps { data: IProjects };
+function ProjectContent({ data }: ProjectContentProps) {
   const {description, link, name, otherFrameworks} = data;
   const descriptionComponent = (
     <>
@@ -101,7 +102,7 @@ function ProjectContent({ data }) {
       <div className="spread">
         <span className="check-out">
           Check it out on: 
-          <a href={link} alt={`Project: ${name}`}>
+          <a href={link} >
             <GitHubLogo />
             <strong> GitHub </strong>
           </a>

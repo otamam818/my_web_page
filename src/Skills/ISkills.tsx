@@ -7,7 +7,7 @@ export interface IProjects {
   name: string,
   link: string,
   description: string,
-  otherFrameworks: IOtherFrameworks
+  otherFrameworks: Array<IOtherFrameworks>
 }
 
 export interface ISubSkills {
