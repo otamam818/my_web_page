@@ -1,9 +1,10 @@
-import {useState} from "react";
+import {useContext, useState } from "react";
 import Content from "./Content";
 import { MainSkills } from "../ISkills";
 import { Dictionary } from "../../Common/CommonTypes";
 
 import "./styles.scss";
+import { SorterContext } from "../Sorter/SorterContext";
 
 export const cardState = {
   opened: 1,
@@ -20,6 +21,7 @@ function ShowcaseCard({ entry_val }: ShowcaseCardProps) {
   const [currState, setCurrState] = useState(cardState.closed);
   const [styleVars, setStyleVars] = useState(getStyleVars(entry_val));
   const isClosed = currState === cardState.closed;
+  // styleVars.hasBeenParsed = useContext(SorterContext)?.get().needsUpdate;
 
   let parsedStyles = {...styleVars};
   Object.entries(entry_val[1]).forEach((value) => {

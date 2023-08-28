@@ -1,10 +1,10 @@
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useRef, useState, MouseEventHandler} from "react";
 import "./Pill.scss";
 
 interface PillProps {
   innerText?: string,
   addedClass?: string,
-  clickResponse?: CallableFunction,
+  clickResponse?: CallableFunction | MouseEventHandler<HTMLDivElement>,
   styleVars?: Object
 }
 
@@ -30,7 +30,7 @@ function Pill( { innerText, addedClass, clickResponse, styleVars }: PillProps ) 
       className={chosenClass}
       ref={cardRef}
       style={style}
-      onClick={clickResponse()}
+      onClick={clickResponse as MouseEventHandler<HTMLDivElement>}
     >
       {innerText}
     </div>

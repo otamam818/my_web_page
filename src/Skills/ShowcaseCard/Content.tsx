@@ -1,4 +1,5 @@
-import {Key, ReactNode, useState} from "react";
+import {Key, ReactNode, useState, useContext } from "react";
+import { SorterContext } from "../Sorter/SorterContext";
 import Card from "../../Common/Card";
 import Pill from "../../Common/Pill";
 import { IProjects, MainSkills } from "../ISkills";
@@ -16,9 +17,10 @@ interface ContentProps {
 function Content ( { data, isClosed }: ContentProps ) {
   // Used to store CSS variables for any data that has a customized preference
   // TODO: Make the cards work like a carousel for mobile devices
-  console.log({ data });
   const [styleVars, setStyleVars] = useState({});
   const contentClass = `content ${isClosed ? 'hidden' : 'shown'}`
+  const sorterContextCall = useContext(SorterContext);
+  const sorterContext = sorterContextCall?.get();
 
   const skillEntries: Array<ReactElement> = [];
   Object.entries(data).forEach((entry, index) => {
@@ -39,7 +41,7 @@ function Content ( { data, isClosed }: ContentProps ) {
 
     const [name, {skills, imageFile, projects }] = entry;
     const subSkills = skills.map((value: ReactNode, index: Key) => {
-      return <Card key={index} innerText={value} define={true} />
+      return <Card key={index} innerText={value} define={sorterContext?.needsUpdate} />
     });
 
     const imageBinary = imageFile ? `/Skills/${imageFile}` : undefined;
@@ -67,6 +69,11 @@ function Content ( { data, isClosed }: ContentProps ) {
       </div>
     )
   });
+
+  if (sorterContext?.needsUpdate) {
+    sorterContextCall?.set({ ...sorterContext, needsUpdate: false });
+  }
+
   return (
     <div className={contentClass}>
       {skillEntries}

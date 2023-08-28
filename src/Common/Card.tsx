@@ -10,7 +10,7 @@ interface CardProps {
 }
 function Card( { innerText, addedClass, clickResponse, define }: CardProps ) {
   const chosenClass = `card ${addedClass ? addedClass : ''}`;
-  const [styleIsSet, setStyleIsSet] = useState(true);
+  // const [styleIsSet, setStyleIsSet] = useState(true);
   if (!clickResponse) {
     clickResponse = () => {};
   }
@@ -19,11 +19,11 @@ function Card( { innerText, addedClass, clickResponse, define }: CardProps ) {
 
   const cardRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (define && styleIsSet) {
+    if (define /**  && styleIsSet */) {
       setStyle({...style, height: `${cardRef.current?.offsetHeight}px`});
-      setStyleIsSet(false);
+      // setStyleIsSet(false);
     }
-  }, [define, cardRef, style, setStyle, styleIsSet, setStyleIsSet]);
+  }, [define, cardRef, style, setStyle /** , styleIsSet, setStyleIsSet */]);
 
   return (
     <div

@@ -7,14 +7,14 @@ function Sorter () {
 
   function handleClick(value: SortKeys) {
     return () => {
-      chosenMode?.set(value);
+      console.log("This is being called all the time");
+      chosenMode?.set({ needsUpdate: true, key: value })
     }
   }
 
   const sorterChoices
-  = (SortKeysList)
-  .map((key) => {
-    if (key === chosenMode?.get()) {
+  = (SortKeysList).map((key) => {
+    if (key === chosenMode?.get().key) {
       return (
       <Pill
           key={key}

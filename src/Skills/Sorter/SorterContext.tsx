@@ -5,8 +5,15 @@ import { MainSkills } from "../ISkills";
 export type SortKeys = "Default" | "Alphabetical" | "Proficiency";
 export const SortKeysList: Array<SortKeys> = ["Default", "Alphabetical", "Proficiency"]
 
-type sortFuncKey = [string, MainSkills]
-export const SortFunctions: Map<SortKeys, (val1: sortFuncKey, val2: sortFuncKey) => Number> = new Map([
+export interface SorterData {
+  key: SortKeys,
+  needsUpdate: boolean
+}
+
+export type sortFuncKey = [string, MainSkills]
+export type CallableSortFunction
+  = (val1: sortFuncKey, val2: sortFuncKey) => Number;
+export const SortFunctions: Map<SortKeys, CallableSortFunction> = new Map([
     ["Default", (_val1: sortFuncKey, _val2: sortFuncKey) => {
       return 0;
     }],
@@ -18,4 +25,4 @@ export const SortFunctions: Map<SortKeys, (val1: sortFuncKey, val2: sortFuncKey)
     }]
 ]);
 
-export const SorterContext = createContext<ClassLike<SortKeys>|null>(null)
+export const SorterContext = createContext<ClassLike<SorterData>|null>(null)
