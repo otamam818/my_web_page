@@ -27,6 +27,7 @@ function Skills() {
       <ShowcaseCard key={index} entry_val={entry_val} />
     );
   });
+
   return (
     <SorterContext.Provider value={sortMode as ClassLike<SorterData>} >
     <div className="my-skills">

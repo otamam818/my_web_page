@@ -1,4 +1,4 @@
-import {useContext, useState } from "react";
+import {useContext, useEffect, useState } from "react";
 import Content from "./Content";
 import { MainSkills } from "../ISkills";
 import { Dictionary } from "../../Common/CommonTypes";
@@ -21,27 +21,28 @@ function ShowcaseCard({ entry_val }: ShowcaseCardProps) {
   const [currState, setCurrState] = useState(cardState.closed);
   const [styleVars, setStyleVars] = useState(getStyleVars(entry_val));
   const isClosed = currState === cardState.closed;
-  // styleVars.hasBeenParsed = useContext(SorterContext)?.get().needsUpdate;
 
-  let parsedStyles = {...styleVars};
-  Object.entries(entry_val[1]).forEach((value) => {
-    const [innerKey, innerVal] = value; 
-    const parsedStylesClone = { ...parsedStyles };
-    if (innerKey.startsWith('--') ) {
-      if (!(innerKey in parsedStyles)) {
-        parsedStylesClone[innerKey] = innerVal;
-      }
-      parsedStylesClone.hasBeenParsed = true;
-      parsedStyles = parsedStylesClone;
-      return;
+  const sorterContext = useContext(SorterContext);
+  useEffect(() => {
+    if (sorterContext?.get().needsUpdate) {
+      let parsedStyles = getStyleVars(entry_val);
+      Object.entries(entry_val[1]).forEach((value) => {
+        const [innerKey, innerVal] = value; 
+        const parsedStylesClone = { ...parsedStyles };
+        if (innerKey.startsWith('--') ) {
+          if (!(innerKey in parsedStyles)) {
+            parsedStylesClone[innerKey] = innerVal;
+          }
+          parsedStyles = parsedStylesClone;
+          return;
+        }
+        parsedStyles = parsedStylesClone;
+      });
+
+      setStyleVars(parsedStyles);
+      sorterContext.set({ key: sorterContext.get().key, needsUpdate: false})
     }
-    parsedStylesClone.hasBeenParsed = true;
-    parsedStyles = parsedStylesClone;
-  });
-
-  if (!styleVars.hasBeenParsed) {
-    setStyleVars(parsedStyles);
-  }
+  }, [sorterContext, entry_val]);
 
   const toggleState = () => { return (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
@@ -83,7 +84,7 @@ function getStyleVars(entry_val: DataMap): Dictionary {
     .max(...entry_val[0]
       .split(' ')
       .map((value) => value.length))
-  return {hasBeenParsed: false, "--initWidth": `${width}ch`}
+  return {"--initWidth": `${width}ch`}
 }
 
 export default ShowcaseCard;

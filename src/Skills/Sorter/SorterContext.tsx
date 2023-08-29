@@ -18,7 +18,7 @@ export const SortFunctions: Map<SortKeys, CallableSortFunction> = new Map([
       return 0;
     }],
     ["Alphabetical", (val1: sortFuncKey, val2: sortFuncKey) => {
-      return Number(val1[0] < val2[0]);
+      return Number(val1[0] > val2[0]);
     }],
     ["Proficiency", (val1: sortFuncKey, val2: sortFuncKey) => {
         return Number(val1[1].proficiency < val2[1].proficiency);

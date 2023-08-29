@@ -81,8 +81,7 @@ function Content ( { data, isClosed }: ContentProps ) {
   )
 }
 
-interface ProjectContentProps { data: IProjects };
-function ProjectContent({ data }: ProjectContentProps) {
+function ProjectContent({ data }: { data: IProjects }) {
   const {description, link, name, otherFrameworks} = data;
   const descriptionComponent = (
     <>
