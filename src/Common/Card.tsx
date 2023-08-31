@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState, ReactNode} from "react";
+import {useRef, ReactNode} from "react";
 
 // NOTE: `define` represents the option to define values like width, height,
 // etc into the element for the transition to be smooth

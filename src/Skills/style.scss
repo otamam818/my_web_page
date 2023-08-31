@@ -4,6 +4,17 @@
   padding-inline: 15vw;
   box-shadow: 0 16px 16px #0000003f;
 
+  .left-side {
+    display: flex;
+    align-items: baseline;
+
+    .guide-message {
+      margin-left: 15px;
+      position: relative;
+      bottom: 3px;
+    }
+  }
+
   .data-showcase {
     padding-bottom: 51px;
     flex-wrap: wrap;
@@ -13,7 +24,7 @@
       --color: #ffff6c;
       --color-grad: #dddd52;
       --color-hover: #fdfd81;
-      --shadow-color: #82820891;
+      --shadow-color: #00000054;
 
       --initWidth: 10ch;
       background-color: var(--color);
@@ -33,7 +44,7 @@
 
       &:hover {
           scale: 1.1;
-          box-shadow: 0 32px 32px -9px #9d940670;
+          box-shadow: 0 32px 32px -9px #00000050;
           background-color: var(--color-hover);
       }
 
@@ -60,6 +71,20 @@
   
     .sorter {
       align-items: center;
+      gap: 10px;
+
+      & > span {
+        color: #999;
+        box-shadow: -3px -4px 4px transparent;
+        padding: 10px 20px;
+        border-radius: 50px;
+        transition: 200ms;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 1px 3px 4px #0000003f;
+        }
+      }
     }
   }
 }
@@ -112,5 +137,9 @@
       }
     }
   }
+}
+
+.guide-message {
+  color: #777;
 }
 

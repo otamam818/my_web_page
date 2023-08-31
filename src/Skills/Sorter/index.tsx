@@ -7,13 +7,12 @@ function Sorter () {
 
   function handleClick(value: SortKeys) {
     return () => {
-      console.log("This is being called all the time");
       chosenMode?.set({ needsUpdate: true, key: value })
     }
   }
 
   const sorterChoices
-  = (SortKeysList).map((key) => {
+  = SortKeysList.map((key) => {
     if (key === chosenMode?.get().key) {
       return (
       <Pill
@@ -31,7 +30,6 @@ function Sorter () {
     <span
       key={key}
       onClick={handleClick(key)}
-      style={{color: '#999'}}
     > { key } </span>
     )
   })
