@@ -25,23 +25,21 @@
         }
       ]
     },
-    "Object-Oriented Development" : {
-      "imageFile" : "oop.webp",
+    "Scripting" : {
+      "imageFile" : "scripting.png",
       "skills" : [
-        "Develop coherent objects that work efficiently",
-        "Implement patterns that decouple code and allow extensibility",
-        "Explain the benefits of certain architectural decisions for growing the software",
-        "Debug erroneous code and explain the source of the error and follow-up procedures"
+        "Write scripts that automate daily tasks",
+        "Make implmented scripts configurable with easy-to-change parameters",
+        "Interop scripts in one language with other languages",
+        "Transform small scripts into well-designed CLI applications",
+        "Transform small scripts into full-blown desktop applications"
       ],
       "projects" : [
         {
-          "name": "SWEN30006 Project-2 TorusVerse",
-          "link": "https://github.com/otamam818/SWEN30006_Proj2_TorusVerse",
-          "description": "(University) A pre-made game which was massively refactored implement extended features",
-          "otherFrameworks": [
-            {"name" : "Maven", "link" : "https://maven.apache.org/" },
-            {"name" : "JGameGrid", "link" : "https://aplu.ch/home/apluhomex.jsp?site=45" }
-          ],
+          "name": "My-Scripts",
+          "link": "https://github.com/otamam818/My-Scripts",
+          "description": "A repo where I keep scripts that I want to use between devices",
+          "otherFrameworks": [],
           "color" : "lightblue"
         }
       ]
@@ -80,6 +78,51 @@
             {"name" : "Confluence", "link" : "https://www.atlassian.com/software/confluence" },
             {"name" : "Trello", "link" : "https://trello.com/" }
           ]
+        }
+      ]
+    }
+  },
+  "Java" : {
+    "--color" : "#edb7b7",
+    "proficiency" : 100,
+    "--color-grad": "#f88888",
+    "--color-hover" : "#f9c3a2",
+    "Object-Oriented Development" : {
+      "imageFile" : "OOP.png",
+      "skills" : [
+        "Understainding of when to use polypmorphism, composition, and encapsulation",
+        "Implement abstractions that improve understanding and flexibility of code",
+        "Draw and understand UML diagrams to explain code and architecture",
+        "Debug erroneous code and explain the source of the error and follow-up procedures"
+      ],
+      "projects" : [
+        {
+          "name": "WebServer_Java",
+          "link": "https://github.com/otamam818/WebServer_Java",
+          "description": "A practice project to learn web-servers and sockets by implementing HTTP1.0",
+          "otherFrameworks": [],
+          "color" : "lightblue"
+        }
+      ]
+    },
+    "Design Patterns" : {
+      "imageFile" : "design_patterns.png",
+      "skills" : [
+        "Knowledge of various design patterns like facade, adapter, factory, etc.",
+        "Implement patterns that decouple code and allow extensibility",
+        "Explain the benefits of certain architectural decisions for growing the software",
+        "Follow best practices to write safe code without compromising performance"
+      ],
+      "projects" : [
+        {
+          "name": "SWEN30006 Project-2 TorusVerse",
+          "link": "https://github.com/otamam818/SWEN30006_Proj2_TorusVerse",
+          "description": "(University) A pre-made game which was massively refactored implement extended features",
+          "otherFrameworks": [
+            {"name" : "Maven", "link" : "https://maven.apache.org/" },
+            {"name" : "JGameGrid", "link" : "https://aplu.ch/home/apluhomex.jsp?site=45" }
+          ],
+          "color" : "lightblue"
         }
       ]
     }
