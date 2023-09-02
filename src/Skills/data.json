@@ -82,54 +82,9 @@
       ]
     }
   },
-  "Java" : {
-    "--color" : "#edb7b7",
-    "proficiency" : 100,
-    "--color-grad": "#f88888",
-    "--color-hover" : "#f9c3a2",
-    "Object-Oriented Development" : {
-      "imageFile" : "OOP.png",
-      "skills" : [
-        "Understainding of when to use polypmorphism, composition, and encapsulation",
-        "Implement abstractions that improve understanding and flexibility of code",
-        "Draw and understand UML diagrams to explain code and architecture",
-        "Debug erroneous code and explain the source of the error and follow-up procedures"
-      ],
-      "projects" : [
-        {
-          "name": "WebServer_Java",
-          "link": "https://github.com/otamam818/WebServer_Java",
-          "description": "A practice project to learn web-servers and sockets by implementing HTTP1.0",
-          "otherFrameworks": [],
-          "color" : "lightblue"
-        }
-      ]
-    },
-    "Design Patterns" : {
-      "imageFile" : "design_patterns.png",
-      "skills" : [
-        "Knowledge of various design patterns like facade, adapter, factory, etc.",
-        "Implement patterns that decouple code and allow extensibility",
-        "Explain the benefits of certain architectural decisions for growing the software",
-        "Follow best practices to write safe code without compromising performance"
-      ],
-      "projects" : [
-        {
-          "name": "SWEN30006 Project-2 TorusVerse",
-          "link": "https://github.com/otamam818/SWEN30006_Proj2_TorusVerse",
-          "description": "(University) A pre-made game which was massively refactored implement extended features",
-          "otherFrameworks": [
-            {"name" : "Maven", "link" : "https://maven.apache.org/" },
-            {"name" : "JGameGrid", "link" : "https://aplu.ch/home/apluhomex.jsp?site=45" }
-          ],
-          "color" : "lightblue"
-        }
-      ]
-    }
-  },
   "Python" : {
     "--color" : "#70cc89",
-    "proficiency": 10,
+    "proficiency": 9,
     "--color-grad": "#5db374",
     "--color-hover" : "#f9c3a2",
     "Graphical User Interface Development" : {
@@ -179,9 +134,54 @@
       ]
     }
   },
+  "Java" : {
+    "--color" : "#edb7b7",
+    "proficiency" : 7,
+    "--color-grad": "#f88888",
+    "--color-hover" : "#f9c3a2",
+    "Object-Oriented Development" : {
+      "imageFile" : "OOP.png",
+      "skills" : [
+        "Understainding of when to use polypmorphism, composition, and encapsulation",
+        "Implement abstractions that improve understanding and flexibility of code",
+        "Draw and understand UML diagrams to explain code and architecture",
+        "Debug erroneous code and explain the source of the error and follow-up procedures"
+      ],
+      "projects" : [
+        {
+          "name": "WebServer_Java",
+          "link": "https://github.com/otamam818/WebServer_Java",
+          "description": "A practice project to learn web-servers and sockets by implementing HTTP1.0",
+          "otherFrameworks": [],
+          "color" : "lightblue"
+        }
+      ]
+    },
+    "Design Patterns" : {
+      "imageFile" : "design_patterns.png",
+      "skills" : [
+        "Knowledge of various design patterns like facade, adapter, factory, etc.",
+        "Implement patterns that decouple code and allow extensibility",
+        "Explain the benefits of certain architectural decisions for growing the software",
+        "Follow best practices to write safe code without compromising performance"
+      ],
+      "projects" : [
+        {
+          "name": "SWEN30006 Project-2 TorusVerse",
+          "link": "https://github.com/otamam818/SWEN30006_Proj2_TorusVerse",
+          "description": "(University) A pre-made game which was massively refactored implement extended features",
+          "otherFrameworks": [
+            {"name" : "Maven", "link" : "https://maven.apache.org/" },
+            {"name" : "JGameGrid", "link" : "https://aplu.ch/home/apluhomex.jsp?site=45" }
+          ],
+          "color" : "lightblue"
+        }
+      ]
+    }
+  },
   "Rust" : {
     "--color" : "#f2ac82",
-    "proficiency": 8,
+    "proficiency": 9,
     "--color-grad": "#f09761",
     "--color-hover" : "#f9c3a2",
     "Cross-platform development" : {
