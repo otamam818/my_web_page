@@ -52,7 +52,12 @@ function InfoCards() {
   )
 }
 
-function Card( { title, subtitle, link } ) {
+interface CardProps {
+  title: string,
+  subtitle: string,
+  link: string,
+}
+function Card( { title, subtitle, link }: CardProps ) {
   return (
     <a href={link}>
       <div className="card">

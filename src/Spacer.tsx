@@ -1,5 +1,7 @@
+import { Dictionary } from "./Common/CommonTypes";
 
-function Spacer ({ style }) {
+interface SpacerProps { style: Dictionary };
+function Spacer ({ style } : SpacerProps) {
   return (
     <div className="spacer" style={ style }></div>
   )

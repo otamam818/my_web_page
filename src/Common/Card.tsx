@@ -7,9 +7,9 @@ interface CardProps {
  innerText?: ReactNode,
  addedClass?: string,
  clickResponse?: CallableFunction,
- define?: boolean
+ // define?: boolean
 }
-function Card( { innerText, addedClass, clickResponse, define }: CardProps ) {
+function Card( { innerText, addedClass, clickResponse /** ,define */ }: CardProps ) {
   const chosenClass = `card ${addedClass ? addedClass : ''}`;
   // const [styleIsSet, setStyleIsSet] = useState(true);
   if (!clickResponse) {

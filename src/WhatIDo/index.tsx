@@ -4,6 +4,7 @@ import RightSection from "./RightSection";
 import "./style.scss";
 
 function WhatIDo () {
+  // @ts-ignore
   let data = require("./data.json").data;
   let [waiting, setWaiting] = useState(false);
   let [counter, setCounter] = useState(

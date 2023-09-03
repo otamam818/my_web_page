@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactElement } from 'react';
 
 const NUM_ROWS = 8;
 const NUM_COLUMNS = 10;
 const DELAY_SCALER = 4;
 
 function WelcomeSplash () {
-  const [dots, setDots] = useState(null)
+  const [dots, setDots] = useState<Array<ReactElement> | null>(null)
 
   useEffect( () => {
     let finlist = []
@@ -14,6 +14,7 @@ function WelcomeSplash () {
       for (let j = 0; j < NUM_COLUMNS; j++) {
         let delay = Math.ceil(Math.random() * DELAY_SCALER);
         innerList.push(<div key={`dot-${j}`} className='dot' style={
+          // @ts-ignore
           {"--delay" : `${delay}s`}
         }>
           •</div>);
