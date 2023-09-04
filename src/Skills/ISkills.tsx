@@ -13,12 +13,11 @@ export interface IProjects {
 export interface ISubSkills {
     imageFile: string,
     skills: Array<string>,
-    projects: IProjects
+    projects: Array<IProjects>
 }
 
 export interface MainSkills {
-    proficiency: Number,
-    [key: string]: ISubSkills | any;
+    [key: string]: ISubSkills | number | string;
 }
 
 export interface SkillType {

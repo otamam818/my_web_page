@@ -2,7 +2,7 @@ import {Key, ReactNode, useState, useContext } from "react";
 import { SorterContext } from "../Sorter/SorterContext";
 import Card from "../../Common/Card";
 import Pill from "../../Common/Pill";
-import { IProjects, MainSkills } from "../ISkills";
+import { IProjects, ISubSkills, MainSkills } from "../ISkills";
 import { ReactElement } from "react";
 import { Dictionary } from "../../Common/CommonTypes";
 
@@ -39,9 +39,10 @@ function Content ( { data, isClosed }: ContentProps ) {
       return;
     }
 
-    const [name, {skills, imageFile, projects }] = entry;
+    const remValues = entry as unknown as [string, ISubSkills];
+    const [name, {skills, imageFile, projects }] = remValues;
     const subSkills = skills.map((value: ReactNode, index: Key) => {
-      return <Card key={index} innerText={value} define={sorterContext?.needsUpdate} />
+      return <Card key={index} innerText={value} />
     });
 
     const imageBinary = imageFile ? `/Skills/${imageFile}` : undefined;

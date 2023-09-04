@@ -1,14 +1,15 @@
+import { ReactNode } from 'react';
 import data from "./data.json";
 import ShowcaseCard from "./ShowcaseCard";
 import Sorter from "./Sorter";
 import { SorterContext, SorterData, SortFunctions, CallableSortFunction } from "./Sorter/SorterContext";
-import { makeState, ClassLike } from "../Common/Hooks";
+import { useStateDict, ClassLike } from "../Common/Hooks";
 import { MainSkills } from "./ISkills";
 
 import "./style.scss";
 
 function Skills() {
-  const sortMode = makeState<SorterData>({
+  const sortMode = useStateDict<SorterData>({
     key: 'Default',
     needsUpdate: true
   });
@@ -17,7 +18,6 @@ function Skills() {
 
   const showcase = Object
     .entries(data)
-    // @ts-ignore
     .sort(currentSortFunction)
     .map((entry_val: [string, MainSkills], index) => {
     if (entry_val[0].startsWith("--")) {
@@ -40,7 +40,7 @@ function Skills() {
         <Sorter />
       </div>
       <div className="data-showcase spread">
-        {showcase}
+        {showcase as ReactNode}
       </div>
     </div>
     </SorterContext.Provider>

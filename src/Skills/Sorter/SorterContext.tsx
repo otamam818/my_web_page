@@ -14,7 +14,7 @@ export type sortFuncKey = [string, MainSkills]
 export type CallableSortFunction
   = (val1: sortFuncKey, val2: sortFuncKey) => number;
 export const SortFunctions: Map<SortKeys, CallableSortFunction> = new Map([
-    ["Default", (_val1: sortFuncKey, _val2: sortFuncKey) => {
+    ["Default", () => {
       return 0;
     }],
     ["Alphabetical", (val1: sortFuncKey, val2: sortFuncKey) => {

@@ -1,6 +1,6 @@
 import "./style.scss";
 import data from "./data.txt";
-import {useState} from "react";
+import {useState, CSSProperties} from "react";
 
 function About() {
   const [text, setText] = useState<string | null>(null);
@@ -10,11 +10,9 @@ function About() {
 
   return (
     <div className="about spread">
-      {/** @ts-ignore */}
-      <div className="spacer" style={{'--spacer-width': '60vw'}}></div>
+      <div className="spacer" style={({'--spacer-width': '60vw'}) as CSSProperties}></div>
         {text}
-      {/** @ts-ignore */}
-      <div className="spacer" style={{'--spacer-width': '30vw'}}></div>
+      <div className="spacer" style={({'--spacer-width': '30vw'}) as CSSProperties}></div>
     </div>
   );
 }

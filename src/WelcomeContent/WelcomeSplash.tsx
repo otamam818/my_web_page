@@ -1,4 +1,4 @@
-import { useState, useEffect, ReactElement } from 'react';
+import { useState, useEffect, ReactElement, CSSProperties } from 'react';
 
 const NUM_ROWS = 8;
 const NUM_COLUMNS = 10;
@@ -8,14 +8,13 @@ function WelcomeSplash () {
   const [dots, setDots] = useState<Array<ReactElement> | null>(null)
 
   useEffect( () => {
-    let finlist = []
+    const finlist = []
     for (let i = 0; i < NUM_ROWS; i++) {
-      let innerList = [];
+      const innerList = [];
       for (let j = 0; j < NUM_COLUMNS; j++) {
-        let delay = Math.ceil(Math.random() * DELAY_SCALER);
+        const delay = Math.ceil(Math.random() * DELAY_SCALER);
         innerList.push(<div key={`dot-${j}`} className='dot' style={
-          // @ts-ignore
-          {"--delay" : `${delay}s`}
+          ({"--delay" : `${delay}s`}) as CSSProperties
         }>
           •</div>);
       }

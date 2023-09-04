@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import "./style.scss";
 
-let cardData = [
+const cardData = [
   {
     title: "Projects",
     subtitle: "How I contribute to the world",
@@ -27,7 +27,7 @@ const allPositions = {
 const THRESHOLD_HEIGHT = 0.65 * window.innerHeight;
 
 function InfoCards() {
-  let cardComponents = cardData.map((value, index) => <Card key={index} {...value} />)
+  const cardComponents = cardData.map((value, index) => <Card key={index} {...value} />)
   const [cardPosition, setCardPosition] = useState(allPositions.default);
 
   // Checks whether the observer has been spotted or not

@@ -6,7 +6,7 @@ import { Dictionary } from "../../Common/CommonTypes";
 import "./styles.scss";
 import { SorterContext } from "../Sorter/SorterContext";
 
-export const cardState = {
+const cardState = {
   opened: 1,
   closed: 2
 }
@@ -80,7 +80,7 @@ function ShowcaseCard({ entry_val }: ShowcaseCardProps) {
 
 function getStyleVars(entry_val: DataMap): Dictionary {
   // Get the maximum width for fitting all words in the card appropriately
-  let width = Math
+  const width = Math
     .max(...entry_val[0]
       .split(' ')
       .map((value) => value.length))

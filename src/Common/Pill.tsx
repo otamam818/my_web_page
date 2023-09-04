@@ -5,7 +5,7 @@ interface PillProps {
   innerText?: string,
   addedClass?: string,
   clickResponse?: CallableFunction | MouseEventHandler<HTMLDivElement>,
-  styleVars?: Object
+  styleVars?: object
 }
 
 function Pill( { innerText, addedClass, clickResponse, styleVars }: PillProps ) {
