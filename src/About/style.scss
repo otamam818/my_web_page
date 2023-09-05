@@ -12,6 +12,9 @@
   font-style: italic;
   text-align: center;
 
+  position: relative;
+  z-index: 2;
+
   .spacer {
     --spacer-width: 60vw;
 

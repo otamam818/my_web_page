@@ -1,7 +1,7 @@
 
 .welcome-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   gap: 200px;
 }
@@ -14,8 +14,10 @@
 }
 
 .welcome-content {
+  height: 60vh;
   .welcome-message {
     width: max-content;
+    margin-block: 110px;
 
     h1 {
       font-size: 42px;
@@ -27,8 +29,11 @@
   }
 
   img {
-    height: 225px;
-    border-radius: 100%;
+    position: relative;
+    z-index: 1;
+    height: 110%;
+    top: 130px;
+    margin-top: -250px;
   }
 
   .welcome-content-splash {
@@ -61,6 +66,8 @@
     .welcome-message {
       text-align: center;
       width: 100%;
+      margin-block: 20px 50px;
+      width: 90vw;
     }
   }
 }
