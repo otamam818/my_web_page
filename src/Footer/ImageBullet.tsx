@@ -1,7 +1,7 @@
 interface ImageBulletProps {
   imagePath: string;
   title: string;
-  link: string;
+  link: string | null;
 }
 export function ImageBullet({ imagePath, title, link }: ImageBulletProps) {
   const imageSource = `Footer/${imagePath}`;

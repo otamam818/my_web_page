@@ -1,6 +1,10 @@
 
 .welcome-content {
   display: flex;
+  position: relative;
+  z-index: -2;
+  color: white;
+  --color-complementary: #188C84;
   justify-content: space-around;
   align-items: center;
   gap: 200px;
@@ -51,7 +55,10 @@
       font-size: 8px;
 
       .dot {
-        animation: funfade 4s infinite;
+        position: relative;
+        --delay: 0s;
+        // DEBUG: Causes scrolling issues
+        // animation: funfade 4s;
         animation-delay: var(--delay);
       }
     }
@@ -73,12 +80,19 @@
 }
 
 @keyframes funfade {
-  0%, 80% {
+  0% {
+    opacity: 1;
     filter: blur(0);
+    display: flex;
   }
 
   50% {
+    opacity: 0;
     filter: blur(10px);
+  }
+
+  51% {
+    display: none;
   }
 }
 

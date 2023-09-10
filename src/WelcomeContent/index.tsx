@@ -1,18 +1,13 @@
-import {useRef} from "react";
 import "./style.scss";
 import WelcomeMessage from "./WelcomeMessage";
 import WelcomeSplash from "./WelcomeSplash";
 import mePic from "./me.png" ;
 
 function WelcomeContent () {
-  const ref = useRef(null);
   return (
-    <div
-      className="welcome-content"
-      ref={ref}
-    >
+    <div className="welcome-content">
       <WelcomeMessage />
-      <img src={mePic} alt="me in the park" />
+      <img src={mePic} alt="Me in formal wear" />
       <WelcomeSplash />
     </div>
   )

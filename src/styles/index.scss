@@ -15,11 +15,12 @@
 
 body {
   font-family: SourceSansPro-Semibold;
+  background-color: #101f1e;
+  color: white;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #101f1e;
     color: white;
   }
 }

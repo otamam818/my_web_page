@@ -31,7 +31,6 @@ function InfoCards() {
   const [cardPosition, setCardPosition] = useState(allPositions.default);
 
   // Checks whether the observer has been spotted or not
-
   useEffect(() => {
     document.addEventListener('scroll', () => {
       if (window.scrollY > (THRESHOLD_HEIGHT)) {

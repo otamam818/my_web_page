@@ -1,10 +1,21 @@
 import "./style.scss";
 import { Section } from './Section';
+import leftData from './leftData.json';
+import rightData from './rightData.json';
+
+interface FooterValue {
+  title: string,
+  link: string | null
+}
+
+interface FooterKey {
+  [key: string] : FooterValue
+}
 
 export interface FooterData {
   direction: string,
   title: string,
-  dataPath: string,
+  data: FooterKey,
 }
 
 function Footer() {
@@ -12,12 +23,12 @@ function Footer() {
     {
       direction: 'left',
       title: 'Contact Me:',
-      dataPath: './leftData.json',
+      data: leftData
     },
     {
       direction: 'right',
       title: 'Made using:',
-      dataPath: './rightData.json',
+      data: rightData
     }
   ]
 
