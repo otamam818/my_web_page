@@ -83,9 +83,9 @@
     }
   },
   "Python" : {
-    "--color" : "#70cc89",
+    "--color" : "#acdab8",
     "proficiency": 9,
-    "--color-grad": "#5db374",
+    "--color-grad": "#7eb48c",
     "--color-hover" : "#f9c3a2",
     "Graphical User Interface Development" : {
       "imageFile" : "pyqt.png",
