@@ -180,9 +180,9 @@
     }
   },
   "Rust" : {
-    "--color" : "#f2ac82",
+    "--color" : "#facdb3",
     "proficiency": 9,
-    "--color-grad": "#f09761",
+    "--color-grad": "#f8ab7d",
     "--color-hover" : "#f9c3a2",
     "Cross-platform development" : {
       "imageFile" : "crossplatform.png",

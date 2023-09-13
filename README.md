@@ -2,13 +2,13 @@
 
 Where I let the world know about myself!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Vite](https://vitejs.dev/).
 
 ## Roadmap
 
 - [X] Move the project to TypeScript
-- [ ] Add a sorting section to the skillset
-- [ ] Fix the shadow of the skill cards
+- [X] Add a sorting section to the skillset
+- [X] Fix the shadow of the skill cards
 
 ## React + TypeScript + Vite
 
